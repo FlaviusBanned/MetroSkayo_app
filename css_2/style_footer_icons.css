@@ -1,36 +1,53 @@
+/* Define CSS Variables */
+:root {
+    --footer-bg-start: #dbcdcd; /* Start color for gradient */
+    --footer-bg-end: #ffffff; /* End color for gradient */
+    --footer-padding: 20px; /* Padding for footer */
+    --footer-text-color: #fff; /* Text color */
+    --footer-icon-size: 40px; /* Icon size */
+    --footer-icon-opacity: 0.7; /* Icon hover opacity */
+    --footer-transition: 0.3s ease; /* Transition duration */
+    --footer-icon-gap: 10px; /* Gap between icons */
+}
+
+/* Footer Styling */
 .footer {
-    background: linear-gradient(to right, #dbcdcd 20%, #ffffff 40%, #ffffff 60%, #dbcdcd 80%);
-    padding: 20px;
+    background: linear-gradient(to right, var(--footer-bg-start) 20%, var(--footer-bg-end) 40%, var(--footer-bg-end) 60%, var(--footer-bg-start) 80%);
+    padding: var(--footer-padding);
     text-align: center;
-    color: #fff;
+    color: var(--footer-text-color);
     transform: translateY(0%);
     margin: 0;
 }
 
+/* Footer Icons Container */
 .footer_icons {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px; /* Adjust gap between icons if needed */   
+    gap: var(--footer-icon-gap);
 }
 
+/* Footer Icon Styling */
 .footer-icon img {
-    width: 40px; /* Size of icons */
-    height: 40px; /* Maintain square aspect ratio */
-    object-fit: contain; /* Ensures the icon fits within the given dimensions without distortion */
-    transition: opacity 0.3s ease;
+    width: var(--footer-icon-size);
+    height: var(--footer-icon-size);
+    object-fit: contain;
+    transition: opacity var(--footer-transition);
 }
 
+/* Icon Hover Effect */
 .footer-icon img:hover {
-    opacity: 0.7;
+    opacity: var(--footer-icon-opacity);
 }
 
-/* Optional: Add responsive design */
+/* Responsive Design */
 @media (max-width: 600px) {
-    .footer{
-        margin:0;
+    .footer {
+        margin: 0;
         flex-grow: 1;
     }
+
     .footer_icons {
         flex-direction: row; /* Ensure row direction on small screens */
         overflow-x: auto; /* Allow horizontal scrolling if icons exceed screen width */

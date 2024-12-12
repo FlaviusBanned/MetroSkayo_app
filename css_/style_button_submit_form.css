@@ -1,35 +1,53 @@
-.button-container {
-    text-align: center;
+/* Define CSS Variables for Button Styling */
+:root {
+    --button-bg-start: #ffffff; /* Start color of the gradient */
+    --button-bg-end: #048d04; /* End color of the gradient */
+    --button-padding: 25px 55px; /* Padding of the button */
+    --button-font-size: 13px; /* Font size of button text */
+    --button-font-weight: bold; /* Font weight of button text */
+    --button-border-radius: 10px; /* Border radius of button */
+    --button-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow */
+    --button-hover-opacity: 0.8; /* Opacity on hover */
+    --button-hover-transform: translateY(-2px); /* Hover transform */
+    --button-hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Shadow on hover */
+    --button-bg-hover-position: left top; /* Hover position of gradient */
+    --button-bg-start-hover: #ffffff; /* Hover start color of the gradient */
+    --button-bg-end-hover: #048d04; /* Hover end color of the gradient */
+    --button-transition-duration: 0.3s; /* Transition duration for various effects */
+    --button-text-color: #000000; /* Default text color */
+    --button-hover-text-color: aliceblue; /* Text color on hover */
 }
 
-/* Button Styling */
+/* Button Container */
 .button-container {
+    text-align: center;
     margin-top: 20px;
     font-family: 'Arial', sans-serif;
-    font-size: 13px;
-    font-weight: bold;
-    padding: 25px 55px; 
+    font-size: var(--button-font-size);
+    font-weight: var(--button-font-weight);
+    padding: var(--button-padding);
     border: none;
     cursor: pointer;
     outline: none;
-    border-radius: 10px; /* Increased border-radius */
+    border-radius: var(--button-border-radius);
     position: relative;
     overflow: hidden;
-    background: linear-gradient(to right, #ffffff -5%, #048d04 20%, #048d04 10%, #ffffff 50%);
+    background: linear-gradient(to right, var(--button-bg-start) -5%, var(--button-bg-end) 20%, var(--button-bg-end) 10%, var(--button-bg-start) 50%);
     background-size: 100% 100%;
     background-position: right bottom;
-    transition: background-position 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adjusted shadow for smaller button */
+    transition: background-position var(--button-transition-duration) ease, transform var(--button-transition-duration) ease, box-shadow var(--button-transition-duration) ease, opacity var(--button-transition-duration) ease;
+    box-shadow: var(--button-shadow);
     display: inline-block;
 }
 
-
+/* Hover Effect */
 .button-container:hover {
-    opacity: 0.8;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    background-position: left top;
+    opacity: var(--button-hover-opacity);
+    transform: var(--button-hover-transform);
+    box-shadow: var(--button-hover-shadow);
+    background-position: var(--button-bg-hover-position);
 }
+
 /* Pseudo-elements for Slicing Effect */
 .button-container::before,
 .button-container::after {
@@ -40,14 +58,16 @@
     top: 0;
     left: 0;
     background: inherit;
-    transition: transform 0.3s ease;
+    transition: transform var(--button-transition-duration) ease;
     z-index: 1;
 }
 
+/* Before Pseudo-element */
 .button-container::before {
     transform: skewX(45deg) translateX(-50%);
 }
 
+/* After Pseudo-element */
 .button-container::after {
     transform: skewX(-45deg) translateX(10%);
 }
@@ -66,26 +86,31 @@
     position: relative;
     z-index: 99;
 }
+
+/* Anchor Link Styling (to cover entire button area) */
 .button-container a {
-    display: block; /* Make anchor a block element to cover the entire button area */
-    width: 100%; /* Ensure anchor covers the full width of the button */
-    height: 100%; /* Ensure anchor covers the full height of the button */
-    text-decoration: none; /* Remove underline from anchor */
-    color: inherit; /* Inherit color from parent */
-    position: absolute; /* Absolute positioning to cover the button area */
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
-    z-index: 99;; /* Ensure it's on top of pseudo-elements */
-    display: flex; /* Use flexbox to align contents */
-    align-items: center; /* Center contents vertically */
-    justify-content: center; /* Center contents horizontally */
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Text Span inside Anchor */
 .button-container a span {
-    font-size: 14px; /* Adjust font size */
-    color: #000000; /* Text color */
-    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: var(--button-font-size);
+    color: var(--button-text-color);
+    transition: opacity var(--button-transition-duration) ease, transform var(--button-transition-duration) ease, box-shadow var(--button-transition-duration) ease;
 }
+
+/* Hover Text Color Change */
 .button-container:hover a span {
-    color: aliceblue; /* Change color on hover */
+    color: var(--button-hover-text-color);
 }

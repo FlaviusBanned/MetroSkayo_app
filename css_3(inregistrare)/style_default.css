@@ -1,35 +1,51 @@
-
-* {
+/* Global Reset */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Define CSS Variables for common values */
+:root {
+    --primary-font: 'Arial', sans-serif;
+    --primary-font-size: 16px;
+    --line-height: 1.6;
+    --primary-color: #333;
+    --background-opacity: 1;
+    --blur-effect: 4px;
+    --container-width: 100vw;
+    --metro-image-height: 180vh;
+    --z-index-background: 1;
+}
+
+/* Body Styling */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
+    font-family: var(--primary-font);
+    font-size: var(--primary-font-size);
+    line-height: var(--line-height);
+    color: var(--primary-color);
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+/* Metro Default Image */
 .metro_default_image {
-    position: relative; /* Establish a stacking context */
-    width: 100vw; /* Full viewport width */
-    height: 180vh; /* Full viewport height */
+    position: relative;
+    width: var(--container-width); /* Full viewport width */
+    height: var(--metro-image-height); /* Full viewport height */
     margin: 0; /* Remove margins */
     padding: 0; /* Remove padding */
     overflow: hidden; /* Hide any overflow */
-    z-index: 1; /* Ensure background is behind the form */
+    z-index: var(--z-index-background); /* Ensure background is behind the form */
 }
 
+/* Image Styling */
 .metro_default_image img {
     width: 100%; /* Full width of the container */
     height: 100%; /* Full height of the container */
     object-fit: cover; /* Cover the container while maintaining aspect ratio */
-    opacity: 1; /* Adjust opacity for transparency */
-    filter: blur(4px); /* Apply a blur effect */
+    opacity: var(--background-opacity); /* Adjust opacity for transparency */
+    filter: blur(var(--blur-effect)); /* Apply a blur effect */
     display: block; /* Ensure it's displayed as a block element */
 }
