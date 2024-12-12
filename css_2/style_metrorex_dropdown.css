@@ -1,0 +1,40 @@
+/* Style for dropdown sections */
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    padding: 0 10px;
+    border-top: 1px solid #ddd;
+}
+
+.dropdown-content.open {
+    max-height: 500px; /* Adjust based on the maximum expected content height */
+    opacity: 1;
+}
+
+.dropdown-toggle {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.plus-circle {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #a08484;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.plus-circle:hover {
+    background-color: #8b6f6f;
+    transform: scale(1.2);
+}

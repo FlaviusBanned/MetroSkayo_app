@@ -1,0 +1,58 @@
+/* Add this CSS to your existing stylesheet */
+
+/* Style for form control containers */
+.form-control {
+    position: relative; /* Allows positioning of the hr element */
+}
+
+/* Style for labels */
+.form-control label {
+    display: block; /* Ensures label is on its own line */
+    margin-bottom: 5px; /* Space between label and hr */
+    font-weight: bold; /* Makes label text bold */
+}
+
+/* Style for the hr line */
+.form-divider {
+    border: none; /* Remove default border */
+    height: 1px; /* Height of the line */
+    background: linear-gradient(to right, rgba(0, 123, 255, 0) 0%, rgb(255, 255, 255) 50%, rgba(0, 123, 255, 0) 100%); /* Gradient effect */
+    margin: 0; /* Remove default margin */
+    margin-bottom: 30px; /* Space between the line and form control */
+    width: 100%; /* Full width of its container */
+}
+
+/* Remove default border for inputs and selects */
+.form-control select {
+    border: 1px solid #ccc; /* Border around the select */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px; /* Padding inside the select */
+    background-color: #fff; /* Background color */
+    font-size: 16px; /* Font size */
+    color: #333; /* Text color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for a subtle 3D effect */
+    width: 60%; /* Full width of its container */
+    outline: none; /* Remove default focus outline */
+}
+.form-control input {
+    border-radius: 4px; /* Rounded corners */
+    border: 3px solid #ddd; /* White border */
+    outline: none; /* Remove default outline */
+    transition: border-color 0.3s ease; /* Smooth transition for border color change */
+}
+
+/* Hover effect */
+.form-control input:hover {
+    border-color: #ddd; /* Light grey border on hover */
+}
+
+/* Focus effect */
+.form-control input:focus {
+    border-color: #007bff; /* Change border color when input is focused */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle shadow */
+}
+
+/* Style the select options */
+.form-control select option {
+    padding: 10px; /* Padding inside options */
+}

@@ -1,0 +1,35 @@
+.footer {
+    background: linear-gradient(to right, #dbcdcd 20%, #ffffff 40%, #ffffff 60%, #dbcdcd 80%);
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    transform: translateY(0%);
+}
+
+.footer_icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px; /* Adjust gap between icons if needed */
+    
+}
+
+.footer-icon img {
+    width: 40px; /* Size of icons */
+    height: 40px; /* Maintain square aspect ratio */
+    object-fit: contain; /* Ensures the icon fits within the given dimensions without distortion */
+    transition: opacity 0.3s ease;
+}
+
+.footer-icon img:hover {
+    opacity: 0.7;
+}
+
+/* Optional: Add responsive design */
+@media (max-width: 600px) {
+    .footer_icons {
+        flex-direction: row;
+        overflow-x: auto; 
+        white-space: nowrap; 
+    }
+}

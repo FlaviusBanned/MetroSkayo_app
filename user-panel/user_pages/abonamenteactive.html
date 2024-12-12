@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> | Abonamente active </title>
+    <link rel="icon" href="/poze-icons/metro_icon.png" type="image/x-icon"> 
+    <link rel="stylesheet" href="/css_5_user_panel/style_aside_bar.css">
+    <link rel="stylesheet" href="/css_5_user_panel/user_panel_background.css">
+    <link rel="stylesheet" href="/css6_user_pages/abonamente_active_main.css">
+    <link rel="stylesheet" href="/css8_common_button_user_pages/css8_button.css">
+    <link rel="stylesheet" href="/css6_user_pages/ab_active_form.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+    <script defer type="module" src="/script_java_user_panel/add_subscription_data.js"></script>
+    <script defer type="module" src="/script_java_user_panel/script_java_reset_pass_logged_in.js"></script>
+</head>
+<body>
+    <aside class="sidebar hidden" id="sidebar">
+        <a href="/user-panel/user_pages/abonamenteactive.html" class="sidebar-btn">Abonamente active</a>
+        <a href="/user-panel/user_pages/istoricabonamente.html" class="sidebar-btn">Istoric</a>
+        <a href="/user-panel/user_pages/setariclienti.html" class="sidebar-btn">Setari</a>
+        <a href="/index.html" class="sidebar-btn logout-btn">Log Out</a>
+    </aside>
+    <div class="arrow" id="toggle-arrow">🚇</div>
+    <main class="main-content" id="main-content">
+        <section id="purchase-section">
+            <h2>Purchase Metrorex Subscription</h2>
+            <br>
+            <form id="purchase-form">
+                <div class="form-control">
+                    <label for="subscription-type">Choose your subscription type:</label>
+                    <select id="subscription-type" name="subscription-type" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="card-1">Card 1 călătorie – 3 RON</option>
+                        <option value="card-2">Card cu 2 călătorii – 6 RON</option>
+                        <option value="card-24">Card 24 de ore – 8 RON</option>
+                        <option value="card-72">Card 72 ore – 20 RON</option>
+                        <option value="card-10">Card 10 călătorii – 25 RON</option>
+                        <option value="weekly">Abonament săptămânal – 30 RON</option>
+                        <option value="monthly">Abonament lunar – 80 RON</option>
+                        <option value="biannual">Abonament bi-anual – 400 RON</option>
+                        <option value="annual">Abonament anual – 700 RON</option>
+                        <option value="student">Abonament lunar pentru studenți – 8 RON</option>
+                        <option value="donor">Abonament lunar donatori de sânge – 40 RON</option>
+                        <option value="elevi">Abonament lunar pentru elevi – gratuit</option>
+                    </select>
+                </div>
+                <hr class="form-divider">
+                <div class="form-control">
+                    <label for="start-date">Start Date:</label>
+                    <input type="text" id="start-date" name="start-date" placeholder="yyyy-mm-dd" required>
+                </div>
+                <hr class="form-divider">
+                <div class="button-container">
+                    <a href="#" id="purchase"><span>Purchase</span></a>
+                </div>
+                <div id="message-popup" class="popup">
+                    <span id="popup-message"></span>
+                </div>                
+                <br><br>
+            </form>
+        </section>
+    </main>
+    <style>
+        .popup {
+            position: fixed;
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .popup.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+    </style>
+    <script src="/flatpick_java/includer_flatpick.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="/script_java_user_panel/aside_hide_show.js"></script>
+</body>
+</html>

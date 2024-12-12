@@ -1,0 +1,58 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0); /* Semi-transparent background */
+    color: #fff;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    z-index: 1000; /* Ensure it's above other content */
+    border-radius: 0 0 5% 5%;
+    backdrop-filter: blur(10px); /* Apply backdrop blur */
+}
+/* Container to center the logo and nav links */
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space out logo and nav links */
+    width: 100%; /* Full width of the navbar */
+    max-width: 1200px; /* Optional: Limit max-width for larger screens */
+}
+
+/* Logo styling */
+.navbar .logo {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center; /* Center logo text */
+}
+
+/* Navigation links styling */
+.navbar .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+/* Navigation links styling */
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 10px;
+    font-weight: bolder;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9); /* Subtle shadow */
+    padding: 8px 16px; /* Padding for space inside the border */
+    border: 1px solid #fff; /* Transparent border initially */
+    border-radius: 15px; /* Rounded corners */
+    background-color: rgba(0, 0, 0, 0.1); /* Slightly darker background */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transitions */
+}
+.navbar a:hover {
+    background-color: #fff; /* White background on hover */
+    color: #000; /* Black text color on hover */
+    border-color: #000; /* Black border on hover */
+    
+}

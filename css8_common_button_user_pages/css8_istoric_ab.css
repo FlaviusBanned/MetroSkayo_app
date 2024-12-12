@@ -1,0 +1,51 @@
+.form-divider {
+    border: none; /* Remove default border */
+    height: 1px; /* Height of the line */
+    background: linear-gradient(to right, rgba(0, 123, 255, 0) 0%, rgb(255, 255, 255) 50%, rgba(0, 123, 255, 0) 100%); /* Gradient effect */
+    margin: 0; /* Remove default margin */
+    margin-bottom: 30px; /* Space between the line and form control */
+    width: 100%; /* Full width of its container */
+}
+
+#subscriptions-table {
+    border-collapse: collapse; /* Ensures borders are merged between cells */
+    width: 100%; /* Full width of its container */
+    background: transparent; /* Transparent background for the table */
+    color: beige; /* Text color for contrast */
+}
+
+#subscriptions-table th, 
+#subscriptions-table td {
+    border: none; /* Remove default border */
+    padding: 8px; /* Add some padding for better readability */
+    text-align: left; /* Align text to the left */
+    background: transparent; /* Transparent background for cells */
+    position: relative; /* Position relative for pseudo-elements */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transition for border color, shadow, and background */
+}
+
+#subscriptions-table th {
+    background: transparent; /* Transparent background for table headers */
+    font-weight: bold; /* Bold text for table headers */
+}
+
+/* Hover effect for individual cells */
+#subscriptions-table tbody tr:hover td,
+#subscriptions-table tbody tr:hover th {
+    border: 1px solid white; /* White border on hover */
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5); /* Slightly visible shadow to enhance border effect */
+    background-color: rgba(0, 123, 255, 0.1); /* Slightly colored highlight on hover */
+}
+
+/* Ensure table cells have enough space for pseudo-elements */
+#subscriptions-table td,
+#subscriptions-table th {
+    position: relative;
+    padding: 8px;
+    overflow: hidden;
+}
+
+/* Slight row hover effect */
+#subscriptions-table tbody tr:nth-child(even) {
+    background-color: transparent; /* Transparent background for alternate rows */
+}

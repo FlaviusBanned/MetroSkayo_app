@@ -1,0 +1,27 @@
+.article-container {
+    background: linear-gradient(to right, #a08484 -20%, #ffffff);
+    padding: 40px 20px;
+    margin: 20px 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+.metrorex-article {
+    color: #fff;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-left: 5%; /* Adjust this value to move the article to the left */
+}
+
+
+.metrorex-article h2, .metrorex-article h3 {
+    color: #fff;
+}
+
+.metrorex-article p {
+    color: #f1f1f1;
+    line-height: 1.6;
+}

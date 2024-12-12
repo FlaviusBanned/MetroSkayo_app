@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> | Istoric abonamente </title>
+    <link rel="icon" href="/poze-icons/metro_icon.png" type="image/x-icon"> 
+    <link rel="stylesheet" href="/css_5_user_panel/style_aside_bar.css">
+    <link rel="stylesheet" href="/css_5_user_panel/user_panel_background.css">
+    <link rel="stylesheet" href="/css6_user_pages/abonamente_active_main.css">
+    <link rel="stylesheet" href="/css8_common_button_user_pages/css8_istoric_ab.css">
+    <script defer type="module" src="/script_java_user_panel/retrieve_subscription_data.js"></script>
+
+    
+</head>
+<body>
+    <aside class="sidebar hidden" id="sidebar">
+        <a href="/user-panel/user_pages/abonamenteactive.html" class="sidebar-btn">Abonamente active</a>
+        <a href="/user-panel/user_pages/istoricabonamente.html" class="sidebar-btn">Istoric</a>
+        <a href="/user-panel/user_pages/setariclienti.html" class="sidebar-btn">Setari</a>
+        <a href="/index.html" class="sidebar-btn logout-btn">Log Out</a>
+    </aside>
+    <div class="arrow" id="toggle-arrow">🚇</div>
+    <main class="main-content" id="main-content">
+        <section id="subscriptions-section">
+            <h2>Your Paid Subscriptions</h2>
+            <br>
+            <hr class="form-divider">
+            <table id="subscriptions-table">
+                <thead>
+                    <tr>
+                        <th>Subscription Type</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Price (RON)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be added dynamically by JavaScript -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="/script_java_user_panel/aside_hide_show.js"></script>
+</body>
+</html>

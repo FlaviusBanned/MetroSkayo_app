@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> | Edit Profile </title>
+    <link rel="preconnect" href="https://www.gstatic.com">
+
+    <link rel="icon" href="/poze-icons/metro_icon.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+    <link rel="stylesheet" href="/css_5_user_panel/style_aside_bar.css">
+    <link rel="stylesheet" href="/css6_user_pages/abonamente_active_main.css">
+    <link rel="stylesheet" href="/css_5_user_panel/user_panel_background.css">
+    <link rel="stylesheet" href="/css6_user_pages/ab_active_form.css">
+    <link rel="stylesheet" href="/css8_common_button_user_pages/css8_button.css">
+    <link rel="stylesheet" href="/css8_common_button_user_pages/css8_hide_show_button.css">
+    <script src="/flatpick_java/includer_flatpick.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+    <script defer type="module" src="/script_java/retrievedata.js"></script>
+    <script defer type="module" src="/script_java_user_panel/script_java_reset_pass_logged_in.js"></script>
+    
+</head>
+<body>
+    <style>
+        .form-divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, rgba(0, 123, 255, 0) 0%, rgb(255, 255, 255) 50%, rgba(0, 123, 255, 0) 100%);
+            margin: 0;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+    </style>
+    <aside class="sidebar hidden" id="sidebar">
+        <a href="/user-panel/user_pages/abonamenteactive.html" class="sidebar-btn">Abonamente active</a>
+        <a href="/user-panel/user_pages/istoricabonamente.html" class="sidebar-btn">Istoric</a>
+        <a href="/user-panel/user_pages/setariclienti.html" class="sidebar-btn">Setari</a>
+        <a href="/index.html" class="sidebar-btn logout-btn">Log Out</a>
+    </aside>
+
+    <div class="arrow" id="toggle-arrow">🚇</div>
+
+    <main class="main-content" id="main-content">
+        <h2>Edit Your Profile</h2>
+        <hr class="form-divider">
+        <div id="profile-info">
+            <div class="form-control">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first_name" pattern="[A-Za-z]+" title="Please enter a valid first name" required>
+            </div>
+
+            <div class="form-control">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last_name" pattern="[A-Za-z]+" title="Please enter a valid last name" required>
+            </div>
+            
+            <div class="form-control">
+                <label for="cnp">CNP:</label>
+                <input type="password" id="cnp" name="cnp" pattern="\d{13}" title="CNP must be 13 digits long" readonly class="read-only">
+                <button type="button" id="reveal-cnp-button">Hide/Show</button>
+                <div class="error-message" style=" text-shadow: 
+        1px 1px 0 #000,  
+       -1px -1px 0 #000,
+        1px -1px 0 #000,
+       -1px 1px 0 #000;">CNP cannot be changed. If you encounter any issues, please contact us via email.</div>
+            </div>
+            
+            <div class="form-control">
+                <label for="bdate">Date of Birth:</label>
+                <input type="date" id="bdate" name="bdate" readonly class="read-only">
+                <div class="error-message" style=" text-shadow: 
+                1px 1px 0 #000,  
+               -1px -1px 0 #000,
+                1px -1px 0 #000,
+               -1px 1px 0 #000;">Date of Birth cannot be changed. If you encounter any issues, please contact us via email.</div>
+            </div>
+            
+            
+            <div class="form-control">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._]+@(yahoo\.com|gmail\.com|outlook\.com)" title="Please enter a valid email address" required>
+            </div>
+
+          
+            <div class="form-control">
+             <label for="password">Password:</label>
+             <button type="button" id="reset-password-button">Reset Password</button>
+            </div>
+            <div class="popup hidden" id="message-popup">
+                <div class="popup-content">
+                   <p id="popup-message"></p>
+                </div>
+             </div>
+            <div class="button-container">
+                <a href="#" id="save_changes"><span>Save changes</span></a>
+            </div>
+        </div>
+    </main>
+    <style>
+        .popup {
+        position: fixed;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 99;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    
+    .popup.show {
+        opacity: 1;
+        visibility: visible;
+    }
+    </style>
+    <script src="/script_java_user_panel/reveal_button_cnp_pass.js"></script>
+    <script src="/script_java_user_panel/aside_hide_show.js"></script>
+</body>
+</html>

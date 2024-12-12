@@ -1,0 +1,63 @@
+/* Button Styling */
+.button-container {
+    font-family: 'Arial', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to right, #ffffff -5%, #048d04 20%, #048d04 10%, #ffffff 50%);
+    background-size: 100% 100%;
+    background-position: right bottom;
+    transition: background-position 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button-container:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    background-position: left top;
+}
+
+/* Pseudo-elements for Slicing Effect */
+.button-container::before,
+.button-container::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: inherit;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.button-container::before {
+    transform: skewX(45deg) translateX(-50%);
+}
+
+.button-container::after {
+    transform: skewX(-45deg) translateX(10%);
+}
+
+/* Hover Effect for Pseudo-elements */
+.button-container:hover::before {
+    transform: skewX(40deg) translateX(20%);
+}
+
+.button-container:hover::after {
+    transform: skewX(30deg) translateX(-150%);
+}
+
+/* Ensure Text is Above Pseudo-elements */
+.button-container span {
+    position: relative;
+    z-index: 2;
+}

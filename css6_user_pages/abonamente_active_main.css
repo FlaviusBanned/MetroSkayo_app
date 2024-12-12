@@ -1,0 +1,31 @@
+main.main-content {
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(10px);
+    --webkit-backdrop-filter: blur(10px);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    padding: 20px;
+    width: 90%;
+    max-width: 800px; 
+    box-sizing: border-box;
+    transition: margin-left 0.3s ease; /* Add smooth transition */
+    margin-left: 0; /* Initial state */
+}
+
+main.main-content.shifted {
+    margin-left: 250px; 
+}
+
+
+@media (max-width: 768px) {
+        main.main-content {
+        margin-top: 70px; /* Add space to push content below the arrow */
+        padding: 15px; /* Adjust padding for mobile */
+        transition: margin-left 0.3s ease;
+        width: 90%; /* Ensure it fits well on mobile screens */
+    }
+
+    main.main-content.shifted {
+        margin-left: 0; /* No shift on mobile, sidebar covers the content */
+    }
+}

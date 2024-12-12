@@ -1,0 +1,49 @@
+/* Container styling */
+.images_form{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: absolute;
+    top: 50%; /* Adjust position from the top */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the container */
+    width: 80%; /* Width of the container */
+    z-index: 100; /* Ensure it's above the background image */
+}
+
+/* GOV section styles */
+.GOV {
+    display: flex;
+    justify-content: space-between; /* Space out the images evenly */
+    width: auto; /* Adjust width as needed */
+}
+
+/* Image item styles */
+.image-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px; /* Space between images */
+}
+
+/* Image styles */
+.image-item img {
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow */
+    transition: transform 0.3s; /* Smooth scaling effect */
+}
+
+/* Specific sizes for each image while maintaining aspect ratio */
+.image-item.large img {
+    max-width: 300px; /* Larger size for the first and third images */
+    max-height: 300px; /* Larger size for the first and third images */
+}
+
+.image-item.small img {
+    max-width: 70px; /* Smaller size for the second image */
+    max-height: 70px; /* Smaller size for the second image */
+}
+
+.image-item img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}

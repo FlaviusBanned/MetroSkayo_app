@@ -1,0 +1,35 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.metro_default_image {
+    position: relative; /* Establish a stacking context */
+    width: 100vw; /* Full viewport width */
+    height: 180vh; /* Full viewport height */
+    margin: 0; /* Remove margins */
+    padding: 0; /* Remove padding */
+    overflow: hidden; /* Hide any overflow */
+    z-index: 1; /* Ensure background is behind the form */
+}
+
+.metro_default_image img {
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    object-fit: cover; /* Cover the container while maintaining aspect ratio */
+    opacity: 1; /* Adjust opacity for transparency */
+    filter: blur(4px); /* Apply a blur effect */
+    display: block; /* Ensure it's displayed as a block element */
+}
