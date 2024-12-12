@@ -1,58 +1,133 @@
+/* Define CSS Variables for easy management */
+:root {
+    --navbar-bg: rgba(0, 0, 0, 0); /* Background of the navbar */
+    --navbar-text-color: #fff; /* Text color */
+    --navbar-link-hover-bg: #fff; /* Background color for links on hover */
+    --navbar-link-hover-color: #000; /* Text color for links on hover */
+    --navbar-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for navbar */
+    --navbar-link-bg: rgba(0, 0, 0, 0.1); /* Background color for links */
+    --navbar-link-padding: 8px 16px; /* Padding for links */
+    --navbar-link-font-size: 16px; /* Font size for links */
+    --navbar-link-border-radius: 15px; /* Border radius for links */
+    --navbar-logo-font-size: 20px; /* Font size for logo */
+    --navbar-padding: 10px 20px; /* Padding for navbar */
+    --navbar-max-width: 1200px; /* Max width for the navbar container */
+}
+
+/* Global reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navbar styling */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0); /* Semi-transparent background */
-    color: #fff;
+    background: var(--navbar-bg); /* Navbar background */
+    color: var(--navbar-text-color); /* Navbar text color */
     display: flex;
-    justify-content: center; /* Center the content horizontally */
+    justify-content: center;
     align-items: center;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    z-index: 1000; /* Ensure it's above other content */
+    padding: var(--navbar-padding); /* Navbar padding */
+    box-shadow: var(--navbar-shadow); /* Box shadow */
+    z-index: 1000;
     border-radius: 0 0 5% 5%;
-    backdrop-filter: blur(10px); /* Apply backdrop blur */
+    backdrop-filter: blur(10px); /* Backdrop blur effect */
 }
+
 /* Container to center the logo and nav links */
 .navbar .container {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Space out logo and nav links */
-    width: 100%; /* Full width of the navbar */
-    max-width: 1200px; /* Optional: Limit max-width for larger screens */
+    justify-content: space-between;
+    width: 100%;
+    max-width: var(--navbar-max-width); /* Limit max-width */
 }
 
 /* Logo styling */
 .navbar .logo {
     font-weight: bold;
-    font-size: 20px;
-    text-align: center; /* Center logo text */
+    font-size: var(--navbar-logo-font-size); /* Logo font size */
+    text-align: center;
 }
 
 /* Navigation links styling */
 .navbar .nav-links {
     display: flex;
     align-items: center;
+    position: relative;
 }
 
-/* Navigation links styling */
+/* Navigation link styling */
 .navbar a {
-    color: #fff;
+    color: var(--navbar-text-color); /* Text color for links */
     text-decoration: none;
-    font-size: 16px;
+    font-size: var(--navbar-link-font-size); /* Font size for links */
     margin: 0 10px;
     font-weight: bolder;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9); /* Subtle shadow */
-    padding: 8px 16px; /* Padding for space inside the border */
-    border: 1px solid #fff; /* Transparent border initially */
-    border-radius: 15px; /* Rounded corners */
-    background-color: rgba(0, 0, 0, 0.1); /* Slightly darker background */
+    box-shadow: var(--navbar-shadow); /* Shadow effect for links */
+    padding: var(--navbar-link-padding); /* Padding for links */
+    border: 2px solid white; /* Transparent border */
+    border-radius: var(--navbar-link-border-radius); /* Rounded corners */
+    background-color: var(--navbar-link-bg); /* Background color for links */
     transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transitions */
 }
+
 .navbar a:hover {
-    background-color: #fff; /* White background on hover */
-    color: #000; /* Black text color on hover */
-    border-color: #000; /* Black border on hover */
-    
+    background-color: var(--navbar-link-hover-bg); /* Background color on hover */
+    color: var(--navbar-link-hover-color); /* Text color on hover */
+    border-color: var(--navbar-link-hover-color); /* Border color on hover */
+}
+
+/* Media Queries */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 768px) {
+    .navbar a {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .navbar {
+        padding: 8px 15px;
+    }
+
+    .navbar .logo {
+        font-size: 18px;
+    }
+
+    .navbar .nav-links {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .navbar .nav-links a {
+        margin: 5px 0;
+    }
+}
+
+/* Mobile (below 768px) */
+@media (max-width: 480px) {
+    .navbar a {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+
+    .navbar .logo {
+        font-size: 16px;
+    }
 }

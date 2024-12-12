@@ -1,24 +1,23 @@
-/* Define CSS Variables for Button Styling */
+
 :root {
-    --button-bg-start: #ffffff; /* Start color of the gradient */
-    --button-bg-end: #048d04; /* End color of the gradient */
-    --button-padding: 25px 55px; /* Padding of the button */
-    --button-font-size: 13px; /* Font size of button text */
-    --button-font-weight: bold; /* Font weight of button text */
-    --button-border-radius: 10px; /* Border radius of button */
-    --button-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow */
-    --button-hover-opacity: 0.8; /* Opacity on hover */
-    --button-hover-transform: translateY(-2px); /* Hover transform */
-    --button-hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Shadow on hover */
-    --button-bg-hover-position: left top; /* Hover position of gradient */
-    --button-bg-start-hover: #ffffff; /* Hover start color of the gradient */
-    --button-bg-end-hover: #048d04; /* Hover end color of the gradient */
-    --button-transition-duration: 0.3s; /* Transition duration for various effects */
-    --button-text-color: #000000; /* Default text color */
-    --button-hover-text-color: aliceblue; /* Text color on hover */
+    --button-bg-start: #ffffff; 
+    --button-bg-end: #048d04;
+    --button-padding: 25px 55px;
+    --button-font-size: 13px; 
+    --button-font-weight: bold; 
+    --button-border-radius: 10px; 
+    --button-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    --button-hover-opacity: 0.8; 
+    --button-hover-transform: translateY(-2px);
+    --button-hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+    --button-bg-hover-position: left top; 
+    --button-bg-start-hover: #ffffff; 
+    --button-bg-end-hover: #048d04; 
+    --button-transition-duration: 0.3s; 
+    --button-text-color: #000000; 
+    --button-hover-text-color: aliceblue; 
 }
 
-/* Button Container */
 .button-container {
     text-align: center;
     margin-top: 20px;

@@ -1,3 +1,26 @@
+:root {
+    --primary-bg: #f4f4f4;
+    --secondary-bg: #fff;
+    --primary-color: #333;
+    --secondary-color: #555;
+
+    --padding-small: 10px;
+    --padding-medium: 15px;
+    --padding-large: 20px;
+
+    --gap-small: 10px;
+    --gap-medium: 20px;
+
+    --font-size-small: 0.9rem;
+    --font-size-medium: 1rem;
+    --font-size-large: 1.5rem;
+
+    --border-radius: 8px;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --max-width: 1200px;
+}
+
+/* Global Reset */
 *,
 *::before,
 *::after {
@@ -6,83 +29,85 @@
     padding: 0;
 }
 
+/* Info Section Styling */
 .info-section {
-    padding: 20px;
-    margin: 0;
-    background-color: #f4f4f4; 
-    display: flex; 
-    justify-content: center; 
-    align-items: flex-start; 
+    padding: var(--padding-large);
+    background-color: var(--primary-bg);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     width: 100%;
     flex-grow: 1;
 }
+
+/* Grid Container */
 .info-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Explicitly create 3 equal columns */
-    gap: 20px;
-    width: 100%; /* Full width of the parent container */
-    max-width: 1200px; /* Set a max-width for larger screens */
-    margin: 0 auto; /* Ensure that the container is horizontally centered */
-    padding: 0 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-medium);
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--padding-large);
     box-sizing: border-box;
-    justify-content: center; /* Center the grid items horizontally */
 }
 
-
+/* Grid Columns */
 .info-column {
-    background-color: #fff; /* White background for each column */
-    padding: 15px;
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: var(--secondary-bg);
+    padding: var(--padding-medium);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
 }
 
 .info-column h2 {
-    margin-bottom: 15px;
-    font-size: 1.5em; /* Adjusted to be more readable */
-    color: #333;
+    margin-bottom: var(--gap-medium);
+    font-size: var(--font-size-large);
+    color: var(--primary-color);
 }
 
 .info-column ul {
-    list-style: none; /* Remove default bullet points */
-    padding: 0; /* Remove padding */
+    list-style: none;
+    padding: 0;
 }
 
 .info-column li {
-    margin-bottom: 10px; /* Space between list items */
-    font-size: 16px;
-    color: #555;
+    margin-bottom: var(--gap-small);
+    font-size: var(--font-size-medium);
+    color: var(--secondary-color);
 }
+
+/* Responsive Adjustments */
 @media (min-width: 1200px) {
     .info-container {
-        max-width: 90%; /* Reduce max-width for very large screens */
+        max-width: 90%;
     }
 }
 
-/* Tablets (Small to medium screens, 768px - 1024px) */
 @media (max-width: 1024px) {
     .info-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 Columns */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
+
 @media (max-width: 768px) {
-    .info-section{
-    margin: 0;
+    .info-section {
         flex-grow: 1;
     }
+
     .info-container {
-        grid-template-columns: 1fr; /* Single column on small screens */
-        padding: 0; /* Remove extra padding */
-        transform: none; /* Reset transformation on small screens */
-        position: static; /* Reset position on small screens */
-        left: 0; /* Ensure no horizontal shift on small screens */
+        grid-template-columns: 1fr;
+        padding: 0;
+        position: static;
     }
 }
+
 @media (max-width: 480px) {
     .info-column h2 {
-        font-size: 1.25rem;
+        font-size: var(--font-size-medium);
     }
 
     .info-column li {
-        font-size: 0.9rem;
+        font-size: var(--font-size-small);
     }
 }

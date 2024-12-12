@@ -1,3 +1,20 @@
+:root {
+    --main-bg-color: #f4f4f4;
+    --card-bg-color: #fff;
+    --card-border-radius: 8px;
+    --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --text-primary-color: #333;
+    --text-secondary-color: #555;
+    --font-size-title: 1.5rem;
+    --font-size-list: 1rem;
+    --font-size-title-small: 1.25rem;
+    --font-size-list-small: 0.9rem;
+    --gap-size: 20px;
+    --max-width-container: 1200px;
+    --padding-section: 20px;
+    --padding-card: 15px;
+}
+
 *,
 *::before,
 *::after {
@@ -7,82 +24,89 @@
 }
 
 .info-section {
-    padding: 20px;
+    padding: var(--padding-section);
     margin: 0;
-    background-color: #f4f4f4; 
-    display: flex; 
-    justify-content: center; 
-    align-items: flex-start; 
+    background-color: var(--main-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     width: 100%;
     flex-grow: 1;
 }
+
 .info-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Explicitly create 3 equal columns */
-    gap: 20px;
-    width: 100%; /* Full width of the parent container */
-    max-width: 1200px; /* Set a max-width for larger screens */
-    margin: 0 auto; /* Ensure that the container is horizontally centered */
-    padding: 0 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-size);
+    width: 100%;
+    max-width: var(--max-width-container);
+    margin: 0 auto;
+    padding: 0 var(--padding-section);
     box-sizing: border-box;
-    justify-content: center; /* Center the grid items horizontally */
+    justify-content: center;
 }
 
-
 .info-column {
-    background-color: #fff; /* White background for each column */
-    padding: 15px;
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: var(--card-bg-color);
+    padding: var(--padding-card);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--card-shadow);
 }
 
 .info-column h2 {
-    margin-bottom: 15px;
-    font-size: 1.5em; /* Adjusted to be more readable */
-    color: #333;
+    margin-bottom: var(--gap-size);
+    font-size: var(--font-size-title);
+    color: var(--text-primary-color);
 }
 
 .info-column ul {
-    list-style: none; /* Remove default bullet points */
-    padding: 0; /* Remove padding */
+    list-style: none;
+    padding: 0;
 }
 
 .info-column li {
-    margin-bottom: 10px; /* Space between list items */
-    font-size: 16px;
-    color: #555;
+    margin-bottom: 10px;
+    font-size: var(--font-size-list);
+    color: var(--text-secondary-color);
 }
+
+/* Larger screens (min-width: 1200px) */
 @media (min-width: 1200px) {
     .info-container {
-        max-width: 90%; /* Reduce max-width for very large screens */
+        max-width: 90%;
     }
 }
 
-/* Tablets (Small to medium screens, 768px - 1024px) */
+/* Tablets (max-width: 1024px) */
 @media (max-width: 1024px) {
     .info-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 Columns */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* Mobile (max-width: 768px) */
 @media (max-width: 768px) {
-    .info-section{
-    margin: 0;
+    .info-section {
+        margin: 0;
         flex-grow: 1;
     }
+
     .info-container {
-        grid-template-columns: 1fr; /* Single column on small screens */
-        padding: 0; /* Remove extra padding */
-        transform: none; /* Reset transformation on small screens */
-        position: static; /* Reset position on small screens */
-        left: 0; /* Ensure no horizontal shift on small screens */
+        grid-template-columns: 1fr;
+        padding: 0;
+        transform: none;
+        position: static;
+        left: 0;
     }
 }
+
+/* Extra small screens (max-width: 480px) */
 @media (max-width: 480px) {
     .info-column h2 {
-        font-size: 1.25rem;
+        font-size: var(--font-size-title-small);
     }
 
     .info-column li {
-        font-size: 0.9rem;
+        font-size: var(--font-size-list-small);
     }
 }

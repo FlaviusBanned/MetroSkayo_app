@@ -1,0 +1,97 @@
+:root {
+    --button-bg-start: #ffffff; 
+    --button-bg-end: #048d04; 
+    --button-padding: 25px 55px; 
+    --button-font-size: 13px; 
+    --button-font-weight: bold; 
+    --button-border-radius: 10px; 
+    --button-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    --button-hover-opacity: 0.8; 
+    --button-hover-transform: translateY(-2px); 
+    --button-hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+    --button-bg-hover-position: left top; 
+    --button-bg-start-hover: #048d04; 
+    --button-bg-end-hover: #026702; 
+    --button-transition-duration: 0.3s; 
+    --button-text-color: #000000; 
+    --button-hover-text-color: aliceblue; 
+}
+
+
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Button Link */
+.button-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: var(--button-padding); /* Adjusted padding for lower height */
+    font-size: var(--button-font-size);
+    font-weight: var(--button-font-weight);
+    color: var(--button-text-color);
+    border-radius: var(--button-border-radius);
+    background: linear-gradient(to right, var(--button-bg-start), var(--button-bg-end));
+    box-shadow: var(--button-shadow);
+    transition: background-position var(--button-transition-duration) ease, transform var(--button-transition-duration) ease, box-shadow var(--button-transition-duration) ease, opacity var(--button-transition-duration) ease;
+    position: relative;
+    overflow: hidden;
+    width: 100%; 
+    max-width: 400px; 
+    height: 25px; 
+    line-height: 1; 
+}
+
+/* Hover Effects for the Button */
+.button-link:hover {
+    opacity: var(--button-hover-opacity);
+    transform: var(--button-hover-transform);
+    box-shadow: var(--button-hover-shadow);
+    background: linear-gradient(to right, var(--button-bg-start-hover), var(--button-bg-end-hover)); /* Updated gradient */
+    color: var(--button-hover-text-color);
+}
+
+/* Pseudo-elements for Additional Effects */
+.button-link::before,
+.button-link::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: inherit;
+    transition: transform var(--button-transition-duration) ease;
+    z-index: 1;
+}
+
+.button-link::before {
+    transform: skewX(45deg) translateX(-50%);
+}
+
+.button-link::after {
+    transform: skewX(-45deg) translateX(10%);
+}
+
+.button-link:hover::before {
+    transform: skewX(40deg) translateX(20%);
+}
+
+.button-link:hover::after {
+    transform: skewX(30deg) translateX(-150%);
+}
+
+/* Ensure Text is Above Pseudo-elements */
+.button-link span {
+    position: relative;
+    z-index: 99;
+    font-size: var(--button-font-size);
+}
