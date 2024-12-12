@@ -11,12 +11,7 @@
     z-index: 100; /* Ensure it's above the background image */
 }
 
-/* GOV section styles */
-.GOV {
-    display: flex;
-    justify-content: space-between; /* Space out the images evenly */
-    width: auto; /* Adjust width as needed */
-}
+
 
 /* Image item styles */
 .image-item {
