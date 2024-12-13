@@ -250,11 +250,11 @@
     }
 
     .intro-text h1 {
-        font-size: var(--font-medium);
+        font-size: var(--font-large);
     }
 
     .intro-text p {
-        font-size: var(--font-small);
+        font-size: var(--font-medium);
     }
 }
 @media (max-width: 750px) {
@@ -263,18 +263,24 @@
         margin-top: 25%;  /* reduce padding-ul pe dispozitivele mici */
     }
 
-    .GOV,
-    .login-section {
+    .GOV{
         width: 100%;
         margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
-
+    .login-section{
+    width: 100%;
+        margin: 0;
+    }
     .intro-text h1 {
-        font-size: var(--font-medium);
+        font-size: var(--font-large);
     }
 
     .intro-text p {
-        font-size: var(--font-small);
+        font-size: var(--font-medium);
     }
 
     .image-item.large img {
@@ -304,6 +310,6 @@
     }
 
     .intro-text h1 {
-        font-size: var(--font-small);
+        font-size: var(--font-medium);
     }
 }

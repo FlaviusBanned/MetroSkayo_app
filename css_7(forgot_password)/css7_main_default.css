@@ -1,15 +1,59 @@
+/* Definirea variabilelor la nivelul rădăcinii */
+:root {
+    /* Culori */
+    --background-color: #282c34;
+    --background-overlay-color: #282c34;
+    --secondary-color: #ffffff;
+    --button-bg-start: #ff7e5f;
+    --button-bg-end: #feb47b;
+    --button-text-color: #ffffff;
+    --button-hover-text-color: #333;
+    --button-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    --button-hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    --button-transition-duration: 0.3s;
+    
+    /* Dimensiuni */
+    --font-family: 'Arial', sans-serif;
+    --button-font-size: 16px;
+    --button-font-weight: bold;
+    --button-padding: 15px 30px;
+    --button-height: 50px;
+    --button-width: 200px;
+    --button-border-radius: 15px;
+    --border-radius: 10px;
+    --container-width: 100%;
+    --container-height: 100%;
+    
+    /* Alte efecte */
+    --blur-effect: 5px;
+    --button-hover-opacity: 0.8;
+    --button-hover-transform: translateY(-2px);
+    --button-bg-hover-position: left top;
+}
+
 /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
+    background-color: var(--background-color);
     margin: 0;
-    padding: 10px;
-    overflow-x: hidden;
+    padding: 0;
 }
+
 body::before {
     content: "";
     position: fixed;
@@ -21,25 +65,22 @@ body::before {
     background-size: cover; 
     background-position: center; 
     background-attachment: fixed; 
-    background-color: #282c34; 
-    filter: blur(4px); 
+    background-color: var(--background-overlay-color); 
+    filter: blur(var(--blur-effect)); 
     z-index: -1;
 }
 
-/* Main container to cover the full screen */
 .main-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh; /* Full viewport height */
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0); /* Dark overlay for better contrast */
+    width: var(--container-width);
+    height: var(--container-height);
+    background: rgba(0, 0, 0, 0);
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* Full-screen glassmorphism container */
 .glass-overlay {
     position: relative;
     display: flex;
@@ -49,35 +90,33 @@ body::before {
     height: 100%;
 }
 
-/* Centered form with glassmorphic effect */
 form {
     padding: 40px;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
     text-align: left;
     z-index: 2;
-    backdrop-filter: blur(10px); /* Glassmorphism blur */
-    -webkit-backdrop-filter: blur(10px); /* Safari support */
-    width: 80%; /* Maintain form width */
-    max-width: 400px; /* Maximum width */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 80%;
+    max-width: 450px;
     align-items: center;
     display: flex;
     flex-direction: column;
 }
 
-/* Styling for labels and inputs */
 label {
     font-size: 1.2em;
-    color: #fff;
+    color: var(--secondary-color);
     margin-bottom: 10px;
-    display: block; /* Ensures proper spacing */
+    display: block;
     text-align: center;
 }
 
 input[type="email"] {
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border: none;
     border-radius: 5px;
     width: 100%;
@@ -85,35 +124,37 @@ input[type="email"] {
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* Button Container Styling */
 .button-container {
+    text-align: center;
     margin-top: 20px;
-    font-family: 'Arial', sans-serif;
-    font-size: 13px;
-    font-weight: bold;
-    padding: 25px 55px; 
+    font-family: var(--font-family);
+    font-size: var(--button-font-size);
+    font-weight: var(--button-font-weight);
+    padding: var(--button-padding);
+    height: var(--button-height);
+    width: var(--button-width);
     border: none;
     cursor: pointer;
     outline: none;
-    border-radius: 10px; /* Increased border-radius */
+    border-radius: var(--button-border-radius);
     position: relative;
     overflow: hidden;
-    background: linear-gradient(to right, #ffffff -5%, #048d04 20%, #048d04 10%, #ffffff 50%);
+    background: linear-gradient(to right, var(--button-bg-start) -5%, var(--button-bg-end) 20%, var(--button-bg-end) 10%, var(--button-bg-start) 50%);
     background-size: 100% 100%;
     background-position: right bottom;
-    transition: background-position 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adjusted shadow for smaller button */
+    transition: background-position var(--button-transition-duration) ease, transform var(--button-transition-duration) ease, box-shadow var(--button-transition-duration) ease, opacity var(--button-transition-duration) ease;
+    box-shadow: var(--button-shadow);
     display: inline-block;
+    z-index: 1;
 }
 
 .button-container:hover {
-    opacity: 0.8;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    background-position: left top;
+    opacity: var(--button-hover-opacity);
+    transform: var(--button-hover-transform);
+    box-shadow: var(--button-hover-shadow);
+    background-position: var(--button-bg-hover-position);
 }
 
-/* Pseudo-elements for Slicing Effect */
 .button-container::before,
 .button-container::after {
     content: '';
@@ -123,7 +164,7 @@ input[type="email"] {
     top: 0;
     left: 0;
     background: inherit;
-    transition: transform 0.3s ease;
+    transition: transform var(--button-transition-duration) ease;
     z-index: 1;
 }
 
@@ -135,7 +176,6 @@ input[type="email"] {
     transform: skewX(-45deg) translateX(10%);
 }
 
-/* Hover Effect for Pseudo-elements */
 .button-container:hover::before {
     transform: skewX(40deg) translateX(20%);
 }
@@ -144,44 +184,45 @@ input[type="email"] {
     transform: skewX(30deg) translateX(-150%);
 }
 
-/* Ensure Text is Above Pseudo-elements */
 .button-container span {
     position: relative;
     z-index: 99;
 }
+
 .button-container a {
-    display: block; /* Make anchor a block element to cover the entire button area */
-    width: 100%; /* Ensure anchor covers the full width of the button */
-    height: 100%; /* Ensure anchor covers the full height of the button */
-    text-decoration: none; /* Remove underline from anchor */
-    color: inherit; /* Inherit color from parent */
-    position: absolute; /* Absolute positioning to cover the button area */
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
-    z-index: 99;; /* Ensure it's on top of pseudo-elements */
-    display: flex; /* Use flexbox to align contents */
-    align-items: center; /* Center contents vertically */
-    justify-content: center; /* Center contents horizontally */
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .button-container a span {
-    font-size: 14px; /* Adjust font size */
-    color: #000000; /* Text color */
-    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: var(--button-font-size);
+    color: var(--button-text-color);
+    transition: opacity var(--button-transition-duration) ease, transform var(--button-transition-duration) ease, box-shadow var(--button-transition-duration) ease;
 }
+
 .button-container:hover a span {
-    color: aliceblue; /* Change color on hover */
+    color: var(--button-hover-text-color);
 }
-/* Popup */
+
 .popup {
     position: fixed;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.8);
-    color: white;
+    color: var(--secondary-color);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     z-index: 99;
     opacity: 0;
     visibility: hidden;
@@ -196,217 +237,9 @@ input[type="email"] {
     visibility: visible;
 }
 
-/* Media Queries */
 @media (max-width: 600px) {
     .popup {
-        width: 85%; /* Adjust popup width for small screens */
-        top: 20%; /* Adjust position for better fit */
-    }
-}
-/* For tablets and small desktops (max-width: 768px) */
-@media (max-width: 768px) {
-    form {
-        width: 80%; /* Form scales down a bit on tablets */
-        padding: 20px; /* Adjust form padding */
-    }
-    label {
-        font-size: 1em;
-    }
-    input[type="email"] {
-        padding: 10px;
-        margin-bottom: 20px;
-        border: none;
-        border-radius: 5px;
-        width: 80%;
-        font-size: 1rem;
-        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-    }
-    .button-container {
-        margin-top: 20px;
-        font-family: 'Arial', sans-serif;
-        font-size: 10px;
-        font-weight: bold;
-        padding: 20px 40px; 
-        border: none;
-        cursor: pointer;
-        outline: none;
-        border-radius: 10px; /* Increased border-radius */
-        position: relative;
-        overflow: hidden;
-        background: linear-gradient(to right, #ffffff -5%, #048d04 20%, #048d04 10%, #ffffff 50%);
-        background-size: 100% 100%;
-        background-position: right bottom;
-        transition: background-position 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adjusted shadow for smaller button */
-        display: inline-block;
-    }
-    
-
-    .button-container:hover {
-        opacity: 0.8;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-        background-position: left top;
-    }
-
-    /* Pseudo-elements for Slicing Effect */
-    .button-container::before,
-    .button-container::after {
-        content: '';
-        position: absolute;
-        width: 200%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: inherit;
-        transition: transform 0.3s ease;
-        z-index: 1;
-    }
-
-    .button-container::before {
-        transform: skewX(45deg) translateX(-50%);
-    }
-
-    .button-container::after {
-        transform: skewX(-45deg) translateX(10%);
-    }
-
-    /* Hover Effect for Pseudo-elements */
-    .button-container:hover::before {
-        transform: skewX(40deg) translateX(20%);
-    }
-
-    .button-container:hover::after {
-        transform: skewX(30deg) translateX(-150%);
-    }
-
-    /* Ensure Text is Above Pseudo-elements */
-    .button-container span {
-        position: relative;
-        z-index: 99;
-    }
-    
-
-    /* Style for the anchor element within the button container */
-    .button-container a {
-        display: block; /* Make anchor a block element to cover the entire button area */
-        width: 100%; /* Ensure anchor covers the full width of the button */
-        height: 100%; /* Ensure anchor covers the full height of the button */
-        text-decoration: none; /* Remove underline from anchor */
-        color: inherit; /* Inherit color from parent */
-        position: absolute; /* Absolute positioning to cover the button area */
-        top: 0; /* Align to the top */
-        left: 0; /* Align to the left */
-        z-index: 99;; /* Ensure it's on top of pseudo-elements */
-        display: flex; /* Use flexbox to align contents */
-        align-items: center; /* Center contents vertically */
-        justify-content: center; /* Center contents horizontally */
-    }.button-container a span {
-        font-size: 12px; /* Adjust font size */
-        color: #000000; /* Text color */
-        transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .button-container:hover a span {
-        color: aliceblue; /* Change color on hover */
-    }
-
-}
-
-/* For mobile devices (max-width: 480px) */
-@media (max-width: 480px) {
-    form {
-        width: 100%; /* Form takes up the full width on mobile */
-        padding: 15px; /* Less padding on smaller screens */
-    }
-input[type="email"]{
-    padding: 1%;
-}
-    .button-container {
-        margin-top: 5px;
-        font-family: 'Arial', sans-serif;
-        font-size: 13px;
-        font-weight: bold;
-        padding: 15px 35px; 
-        border: none;
-        cursor: pointer;
-        outline: none;
-        border-radius: 10px; /* Increased border-radius */
-        position: relative;
-        overflow: hidden;
-        background: linear-gradient(to right, #ffffff -5%, #048d04 20%, #048d04 10%, #ffffff 50%);
-        background-size: 100% 100%;
-        background-position: right bottom;
-        transition: background-position 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adjusted shadow for smaller button */
-        display: inline-block;
-    }
-    
-
-    .button-container:hover {
-        opacity: 0.8;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-        background-position: left top;
-    }
-
-    /* Pseudo-elements for Slicing Effect */
-    .button-container::before,
-    .button-container::after {
-        content: '';
-        position: absolute;
-        width: 200%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: inherit;
-        transition: transform 0.3s ease;
-        z-index: 1;
-    }
-
-    .button-container::before {
-        transform: skewX(45deg) translateX(-50%);
-    }
-
-    .button-container::after {
-        transform: skewX(-45deg) translateX(10%);
-    }
-
-    /* Hover Effect for Pseudo-elements */
-    .button-container:hover::before {
-        transform: skewX(40deg) translateX(20%);
-    }
-
-    .button-container:hover::after {
-        transform: skewX(30deg) translateX(-150%);
-    }
-
-    /* Ensure Text is Above Pseudo-elements */
-    .button-container span {
-        position: relative;
-        z-index: 99;
-    }
-    
-
-    /* Style for the anchor element within the button container */
-    .button-container a {
-        display: block; /* Make anchor a block element to cover the entire button area */
-        width: 100%; /* Ensure anchor covers the full width of the button */
-        height: 100%; /* Ensure anchor covers the full height of the button */
-        text-decoration: none; /* Remove underline from anchor */
-        color: inherit; /* Inherit color from parent */
-        position: absolute; /* Absolute positioning to cover the button area */
-        top: 0; /* Align to the top */
-        left: 0; /* Align to the left */
-        z-index: 99;; /* Ensure it's on top of pseudo-elements */
-        display: flex; /* Use flexbox to align contents */
-        align-items: center; /* Center contents vertically */
-        justify-content: center; /* Center contents horizontally */
-    }.button-container a span {
-        font-size: 10px; /* Adjust font size */
-        color: #000000; /* Text color */
-        transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .button-container:hover a span {
-        color: aliceblue; /* Change color on hover */
+        width: 85%;
+        top: 20%;
     }
 }
