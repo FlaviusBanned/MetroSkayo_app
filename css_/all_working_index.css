@@ -304,6 +304,14 @@
         padding: 10px; /* reduce padding-ul pe dispozitivele mici */
     }
 
+    .intro-text h1 {
+        font-size: var(--font-large);
+    }
+
+    .intro-text p {
+        font-size: var(--font-medium);
+    }
+
     .GOV,
     .login-section {
         width: 100%;
@@ -311,5 +319,25 @@
 
     .intro-text h1 {
         font-size: var(--font-medium);
+    }
+}
+
+@media (max-width: 360px) {
+    .image-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); 
+        grid-gap: 10px; 
+        justify-content: center;
+    }
+
+    .image-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-item img {
+        max-width: 100%; 
+        height: auto; 
     }
 }

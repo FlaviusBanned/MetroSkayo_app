@@ -1,4 +1,4 @@
-/* Styling for the button */
+
 #reset-password-button {
     background: rgba(51, 51, 51, 0.2); /* Transparent background for glass effect */
     color: #fff; /* White text for contrast */
@@ -15,7 +15,6 @@
     overflow: hidden;
 }
 
-/* Initial top border that will move down */
 #reset-password-button::before {
     content: '';
     position: absolute;

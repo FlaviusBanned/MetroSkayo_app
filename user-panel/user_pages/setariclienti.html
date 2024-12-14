@@ -25,6 +25,7 @@
     
 </head>
 <body>
+    <button class="menu-toggle" id="menu-toggle">&#9776; Menu</button>
     <style>
         .form-divider {
             border: none;
@@ -34,18 +35,50 @@
             margin-bottom: 30px;
             width: 100%;
         }
-    </style>
-    <aside class="sidebar hidden" id="sidebar">
-        <a href="/user-panel/user_pages/abonamenteactive.html" class="sidebar-btn">Abonamente active</a>
-        <a href="/user-panel/user_pages/istoricabonamente.html" class="sidebar-btn">Istoric</a>
-        <a href="/user-panel/user_pages/setariclienti.html" class="sidebar-btn">Setari</a>
-        <a href="/index.html" class="sidebar-btn logout-btn">Log Out</a>
-    </aside>
+        .save_changes_button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #28a745; /* Verde vibrant */
+    border-radius: 5px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Umbra mai subtilă */
+    z-index: 1;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
-    <div class="arrow" id="toggle-arrow">🚇</div>
+.save_changes_button a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.save_changes_button:hover {
+    background-color: #218838; /* Verde mai închis pentru hover */
+    cursor: pointer;
+    transform: translateY(-2px); /* Mică animație la hover */
+}
+
+    </style>
+   <aside class="sidebar hidden" id="sidebar">
+    <a href="/user-panel/user_pages/abonamenteactive.html" class="sidebar-btn">Active Subscriptions</a>
+    <a href="/user-panel/user_pages/istoricabonamente.html" class="sidebar-btn">History</a>
+    <a href="/user-panel/user_pages/setariclienti.html" class="sidebar-btn">Edit Profile</a>
+    <a href="/user-panel/user_pages/statusabonamente.html" class="sidebar-btn" >Status Subscription</a>
+    <a href="#" class="sidebar-btn close-btn" id="close-btn">Close Menu</a>
+    <a href="/index.html" class="sidebar-btn logout-btn">Log Out</a>
+</aside>    
 
     <main class="main-content" id="main-content">
-        <h2>Edit Your Profile</h2>
+        <h2 style="text-shadow: 
+        1px 1px 0 #000,  
+       -1px -1px 0 #000,
+        1px -1px 0 #000,
+       -1px 1px 0 #000;">Edit Your Profile</h2>
         <hr class="form-divider">
         <div id="profile-info">
             <div class="form-control">
@@ -95,7 +128,7 @@
                    <p id="popup-message"></p>
                 </div>
              </div>
-            <div class="button-container">
+            <div class="save_changes_button">
                 <a href="#" id="save_changes"><span>Save changes</span></a>
             </div>
         </div>
@@ -122,6 +155,27 @@
     }
     </style>
     <script src="/script_java_user_panel/reveal_button_cnp_pass.js"></script>
-    <script src="/script_java_user_panel/aside_hide_show.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+             const menuToggle = document.getElementById('menu-toggle');
+             const sidebar = document.getElementById('sidebar');
+             const closeBtn = document.getElementById('close-btn');
+ 
+             // Afișează meniul și ascunde butonul de meniu când este apăsat butonul de meniu
+             menuToggle.addEventListener('click', () => {
+                 sidebar.classList.add('sidebar-visible');
+                 sidebar.classList.remove('hidden');
+                 menuToggle.style.display = 'none';  // Ascunde butonul de meniu
+             });
+ 
+             // Închide meniul și afișează butonul de meniu când este apăsat butonul de închidere
+             closeBtn.addEventListener('click', () => {
+                 sidebar.classList.remove('sidebar-visible');
+                 sidebar.classList.add('hidden');
+                 menuToggle.style.display = 'block';  // Afișează butonul de meniu
+             });
+         });
+     </script>
+ 
 </body>
 </html>

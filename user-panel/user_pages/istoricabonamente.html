@@ -14,16 +14,22 @@
     
 </head>
 <body>
+    <button class="menu-toggle" id="menu-toggle">&#9776; Menu</button>
     <aside class="sidebar hidden" id="sidebar">
-        <a href="/user-panel/user_pages/abonamenteactive.html" class="sidebar-btn">Abonamente active</a>
-        <a href="/user-panel/user_pages/istoricabonamente.html" class="sidebar-btn">Istoric</a>
-        <a href="/user-panel/user_pages/setariclienti.html" class="sidebar-btn">Setari</a>
+        <a href="/user-panel/user_pages/abonamenteactive.html" class="sidebar-btn">Active Subscriptions</a>
+        <a href="/user-panel/user_pages/istoricabonamente.html" class="sidebar-btn">History</a>
+        <a href="/user-panel/user_pages/setariclienti.html" class="sidebar-btn">Edit Profile</a>
+        <a href="/user-panel/user_pages/statusabonamente.html" class="sidebar-btn" >Status Subscription</a>
+        <a href="#" class="sidebar-btn close-btn" id="close-btn">Close Menu</a>
         <a href="/index.html" class="sidebar-btn logout-btn">Log Out</a>
-    </aside>
-    <div class="arrow" id="toggle-arrow">🚇</div>
+    </aside>    
     <main class="main-content" id="main-content">
         <section id="subscriptions-section">
-            <h2>Your Paid Subscriptions</h2>
+            <h2 style="text-shadow: 
+            1px 1px 0 #000,  
+           -1px -1px 0 #000,
+            1px -1px 0 #000,
+           -1px 1px 0 #000;">Your Paid Subscriptions</h2>
             <br>
             <hr class="form-divider">
             <table id="subscriptions-table">
@@ -41,6 +47,27 @@
             </table>
         </section>
     </main>
-    <script src="/script_java_user_panel/aside_hide_show.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+             const menuToggle = document.getElementById('menu-toggle');
+             const sidebar = document.getElementById('sidebar');
+             const closeBtn = document.getElementById('close-btn');
+ 
+             // Afișează meniul și ascunde butonul de meniu când este apăsat butonul de meniu
+             menuToggle.addEventListener('click', () => {
+                 sidebar.classList.add('sidebar-visible');
+                 sidebar.classList.remove('hidden');
+                 menuToggle.style.display = 'none';  // Ascunde butonul de meniu
+             });
+ 
+             // Închide meniul și afișează butonul de meniu când este apăsat butonul de închidere
+             closeBtn.addEventListener('click', () => {
+                 sidebar.classList.remove('sidebar-visible');
+                 sidebar.classList.add('hidden');
+                 menuToggle.style.display = 'block';  // Afișează butonul de meniu
+             });
+         });
+     </script>
+ 
 </body>
 </html>
