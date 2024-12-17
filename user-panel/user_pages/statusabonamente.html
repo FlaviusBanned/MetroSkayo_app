@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="/css_5_user_panel/style_aside_bar.css">
     <link rel="stylesheet" href="/css_5_user_panel/user_panel_background.css">
     <link rel="stylesheet" href="/css6_user_pages/abonamente_active_main.css">
-    <link rel="stylesheet" href="/css8_common_button_user_pages/css8_button.css">
-    <link rel="stylesheet" href="/css6_user_pages/ab_active_form.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
     <script defer type="module" src="/script_java_user_panel/script_java_reset_pass_logged_in.js"></script>
 </head>
@@ -47,9 +45,38 @@
                     </div>
             
                     <!-- Submit button -->
-                    <button type="submit" class="btn-submit">Verify</button>
+                    <button type="submit" class="btn-submit">Confirm</button>
                 </form>
         </section>
+        <style>
+       .btn-submit {
+    background-color: #5A5CFF; /* Albastru elegant */
+    color: #FFFFFF; /* Text alb */
+    border: 2px solid #3A3CFF; /* Linie subtire pentru eleganță */
+    padding: 8px 16px; /* Dimensiuni compacte */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font modern */
+    font-size: 14px; /* Text discret */
+    letter-spacing: 0.5px; /* Spațiere pentru claritate */
+    border-radius: 30px; /* Colțuri rotunde pentru un aspect rafinat */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Tranziție fluentă */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Umbră subtilă */
+}
+
+.btn-submit:hover {
+    background-color: #3A3CFF; /* Culoare mai închisă la hover */
+    border-color: #1A1BFF; /* Schimbare subtilă a conturului */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Umbră intensificată */
+    transform: translateY(-2px); /* Efect de ridicare la hover */
+}
+
+.btn-submit:active {
+    background-color: #2A2BFF; /* Culoare apăsată */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15); /* Umbră redusă */
+    transform: translateY(1px); /* Ușor apăsat */
+}
+
+        </style>
     </main>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -73,7 +100,6 @@
                         <input type="text" id="series-number" name="series-number" required placeholder="Enter your series and number">
                     `;
                 } else if (beneficiaryType === 'pupil') {
-                    // Dacă se selectează Pupil
                     dynamicFieldsContainer.innerHTML = `
                         <label for="school">School:</label>
                         <input type="text" id="school" name="school" required placeholder="Enter your school">
