@@ -53,18 +53,16 @@
              const sidebar = document.getElementById('sidebar');
              const closeBtn = document.getElementById('close-btn');
  
-             // Afișează meniul și ascunde butonul de meniu când este apăsat butonul de meniu
              menuToggle.addEventListener('click', () => {
                  sidebar.classList.add('sidebar-visible');
                  sidebar.classList.remove('hidden');
-                 menuToggle.style.display = 'none';  // Ascunde butonul de meniu
+                 menuToggle.style.display = 'none';  
              });
- 
-             // Închide meniul și afișează butonul de meniu când este apăsat butonul de închidere
+
              closeBtn.addEventListener('click', () => {
                  sidebar.classList.remove('sidebar-visible');
                  sidebar.classList.add('hidden');
-                 menuToggle.style.display = 'block';  // Afișează butonul de meniu
+                 menuToggle.style.display = 'block';  
              });
          });
      </script>

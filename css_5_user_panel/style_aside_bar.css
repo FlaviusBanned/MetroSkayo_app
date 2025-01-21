@@ -1,17 +1,17 @@
 :root {
-  --menu-bg: #111; /* Culoare de fundal pentru buton */
-  --menu-text-color: #fff; /* Culoare text */
-  --menu-border-color: #fff; /* Culoare bordură */
-  --menu-border-radius: 15px; /* Colțuri rotunjite */
-  --menu-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Umbra */
-  --menu-hover-bg: #444; /* Fundal la hover */
-  --menu-hover-color: #fff; /* Culoare text la hover */
-  --menu-active-bg: #333; /* Fundal la activare */
-  --menu-active-scale: 0.98; /* Micșorarea butonului la apăsare */
-  --menu-focus-shadow: 0 0 8px 4px rgba(0, 150, 255, 0.8); /* Efect de focus */
-  --menu-size: 50px; /* Dimensiune buton */
-  --menu-font-size: 20px; /* Font mai mic pentru a nu ieși din buton */
-  --menu-padding: 8px; /* Padding pentru a ajusta dimensiunea */
+  --menu-bg: #111; 
+  --menu-text-color: #fff; 
+  --menu-border-color: #fff; 
+  --menu-border-radius: 15px; 
+  --menu-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+  --menu-hover-bg: #444; 
+  --menu-hover-color: #fff; 
+  --menu-active-bg: #333; 
+  --menu-active-scale: 0.98; 
+  --menu-focus-shadow: 0 0 8px 4px rgba(0, 150, 255, 0.8); 
+  --menu-size: 50px; 
+  --menu-font-size: 20px; 
+  --menu-padding: 8px; 
 }
 
 body {
@@ -22,52 +22,59 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: #f0f0f0;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden; 
   }
+  main {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 0px;
+    transition: margin-left 0.3s ease-in-out; 
+    overflow-x: hidden;
+}
+
 aside.sidebar {
-  height: 100%; 
-  width: 250px; 
-  position: fixed; 
+  height: 100%;
+  width: 250px;
+  position: fixed;
   top: 0;
   left: 0;
-  background-color: #111; 
+  background-color: #111;
   padding-top: 20px;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 1000; /* Ensure the sidebar is always above content */
+  z-index: 1000;
+  transition: transform 0.3s ease;
 }
 
-/* Sidebar buttons (display full width, styled as buttons) */
 .sidebar-btn {
   display: block;
-  width: 100%; /* Full width of the sidebar */
+  width: 100%; 
   padding: 15px;
   text-decoration: none;
   color: white;
   border-radius: 5px;
-  border: 2px solid transparent; /* Transparent border initially */
+  border: 2px solid transparent; 
   transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, border-width 0.3s ease;
   text-align: center;
-  box-sizing: border-box; /* Ensure padding does not affect width */
-  margin-bottom: 10px; /* Space between buttons */
+  box-sizing: border-box; 
+  margin-bottom: 10px; 
 }
 
 .sidebar-btn:hover {
-  background-color: #333; /* Darken on hover */
-  border-color: #f0f0f0; /* Light border on hover */
+  background-color: #333; 
+  border-color: #f0f0f0; 
   border-width: 2px;
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Add shadow on hover */
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); 
 }
 
-/* Log out button at the bottom */
 .logout-btn {
-  margin-top: auto; /* Push the button to the bottom */
-  height: 50px; /* Adjust height for the button */
-  width: 200px; /* Fixed width */
+  margin-top: auto; 
+  height: 50px; 
+  width: 200px; 
   text-align: center;
-  background-color: rgb(139, 0, 0); /* Red background */
+  background-color: rgb(139, 0, 0); 
   color: white;
   font-size: 14px;
   font-weight: bold;
@@ -80,33 +87,32 @@ aside.sidebar {
 }
 
 .logout-btn:hover {
-  background-color: #ff0000; /* Red on hover */
+  background-color: #ff0000; 
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 }
 
 .menu-toggle {
   position: fixed;
-  top: 20px; /* Poziționează-l în partea de sus */
-  left: 50%; /* Plasează-l în mijlocul lățimii paginii */
-  transform: translateX(-50%); /* Centrare */
-  background-color: var(--menu-bg); /* Fundal închis */
-  color: var(--menu-text-color); /* Culoare text */
-  font-size: var(--menu-font-size); /* Font mai mic */
-  padding: var(--menu-padding); /* Padding ajustabil */
-  border: 2px solid var(--menu-border-color); /* Bordură albă */
-  border-radius: var(--menu-border-radius); /* Colțuri rotunjite */
-  cursor: pointer; /* Pointer pe hover */
-  z-index: 1001; /* Asigură că butonul rămâne deasupra altor elemente */
-  box-shadow: var(--menu-shadow); /* Umbra pentru efect modern */
-  transition: all 0.3s ease; /* Tranziție pentru efectele de hover */
-  height: auto; /* Permite ajustarea în funcție de padding și font */
-  width: auto; /* Permite ajustarea în funcție de font și padding */
+  top: 20px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  background-color: var(--menu-bg); 
+  color: var(--menu-text-color); 
+  font-size: var(--menu-font-size); 
+  padding: var(--menu-padding); 
+  border: 2px solid var(--menu-border-color);
+  border-radius: var(--menu-border-radius); 
+  cursor: pointer; 
+  z-index: 1001; 
+  box-shadow: var(--menu-shadow); 
+  transition: all 0.3s ease;
+  height: auto; 
+  width: auto; 
   display: flex;
   align-items: center;
-  justify-content: center; /* Centrează textul în buton */
+  justify-content: center; 
 }
 
-/* Efect de hover pentru butonul de meniu */
 .menu-toggle:hover {
   background-color: var(--menu-hover-bg);
   color: var(--menu-hover-color);
@@ -114,13 +120,11 @@ aside.sidebar {
   transform: translateX(-50%) scale(1.1);
 }
 
-/* Efect de focus pentru accesibilitate */
 .menu-toggle:focus {
   outline: none;
   box-shadow: var(--menu-focus-shadow);
 }
 
-/* Efect de activare pentru buton */
 .menu-toggle:active {
   transform: translateX(-50%) scale(var(--menu-active-scale));
   box-shadow: var(--menu-shadow);
@@ -128,27 +132,45 @@ aside.sidebar {
 .close-btn {
   margin-top: 10px;
   order: -1; }
-        @media (max-width: 768px) {
-          .menu-toggle {
-              display: block;
-          }
-          aside.sidebar {
-              transform: translateX(-100%);
-              transition: transform 0.3s ease;
-          }
-          aside.sidebar.sidebar-visible {
-              transform: translateX(0);
-              width: 100%;
-              height: 100vh;
-          }
-          .close-btn {
-            display: block; /* Show close menu button on mobile */
-        }
-      }
-      @media (min-width: 769px) {
-          .menu-toggle {
-              display: none;
-          } .close-btn {
-            display: none; /* Hide close menu button on desktop */
-        }
-      }
+ 
+  
+.sidebar-visible + main {
+    margin-left: 250px; 
+}
+.sidebar-visible {
+  transform: translateX(0);
+}
+.hidden {
+  transform: translateX(-100%);
+}
+@media (max-width: 480px) {
+  aside.sidebar {
+      width: 100%;
+      height: 100vh;
+  }
+
+  .sidebar-visible + main {
+      margin-left: 0;
+  }
+}
+
+
+@media (min-width: 481px) and (max-width: 1366px) {
+  aside.sidebar {
+      width: 100%;
+  }
+
+  .sidebar-visible + main {
+      margin-left: 0;
+  }
+}
+
+@media (min-width: 1367px) {
+  aside.sidebar {
+      width: 250px;
+  }
+
+  .sidebar-visible + main {
+      margin-left: 250px;
+  }
+}
