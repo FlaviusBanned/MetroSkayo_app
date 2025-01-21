@@ -15,7 +15,7 @@
     <button class="menu-toggle" id="menu-toggle">&#9776; Menu</button>
     
     <aside class="sidebar hidden" id="sidebar">
-        <a href="/user-panel/user_pages/abonamenteactive.html" class="sidebar-btn">Active Subscriptions</a>
+        <a href="/user-panel/user_pages/abonamenteactive.html" class="sidebar-btn">Purchase</a>
         <a href="/user-panel/user_pages/istoricabonamente.html" class="sidebar-btn">History</a>
         <a href="/user-panel/user_pages/setariclienti.html" class="sidebar-btn">Edit Profile</a>
         <a href="/user-panel/user_pages/statusabonamente.html" class="sidebar-btn" >Status Subscription</a>
@@ -31,7 +31,7 @@
            -1px 1px 0 #000;">Verify status </h2>
             
                 <form id="verification-form">
-                    <!-- Dropdown selector for beneficiary type -->
+                    
                     <label for="beneficiary-type">Select Beneficiary Type:</label>
                     <select id="beneficiary-type" name="beneficiary-type" required>
                         <option value="" disabled selected>Select an option</option>
@@ -39,76 +39,90 @@
                         <option value="pupil">Pupil</option>
                     </select>
             
-                    <!-- Dynamic fields that change based on selection -->
+                  
                     <div id="dynamic-fields">
-                        <!-- Placeholder for dynamically generated fields -->
+                     
                     </div>
             
-                    <!-- Submit button -->
+                    
                     <button type="submit" class="btn-submit">Confirm</button>
                 </form>
         </section>
         <style>
        .btn-submit {
-    background-color: #5A5CFF; /* Albastru elegant */
-    color: #FFFFFF; /* Text alb */
-    border: 2px solid #3A3CFF; /* Linie subtire pentru eleganță */
-    padding: 8px 16px; /* Dimensiuni compacte */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font modern */
-    font-size: 14px; /* Text discret */
-    letter-spacing: 0.5px; /* Spațiere pentru claritate */
-    border-radius: 30px; /* Colțuri rotunde pentru un aspect rafinat */
+    background-color: #5A5CFF; 
+    color: #FFFFFF;
+    border: 2px solid #3A3CFF; 
+    padding: 8px 16px; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-size: 14px; 
+    letter-spacing: 0.5px; 
+    border-radius: 30px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out; /* Tranziție fluentă */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Umbră subtilă */
+    transition: all 0.3s ease-in-out; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 .btn-submit:hover {
-    background-color: #3A3CFF; /* Culoare mai închisă la hover */
-    border-color: #1A1BFF; /* Schimbare subtilă a conturului */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Umbră intensificată */
-    transform: translateY(-2px); /* Efect de ridicare la hover */
+    background-color: #3A3CFF; 
+    border-color: #1A1BFF; 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-2px); 
 }
 
 .btn-submit:active {
-    background-color: #2A2BFF; /* Culoare apăsată */
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15); /* Umbră redusă */
-    transform: translateY(1px); /* Ușor apăsat */
+    background-color: #2A2BFF;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15); 
+    transform: translateY(1px); 
 }
 
         </style>
     </main>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const beneficiaryTypeSelect = document.getElementById('beneficiary-type');
-            const dynamicFieldsContainer = document.getElementById('dynamic-fields');
+       document.addEventListener('DOMContentLoaded', () => {
+    const beneficiaryTypeSelect = document.getElementById('beneficiary-type');
+    const dynamicFieldsContainer = document.getElementById('dynamic-fields');
 
-            // Funcția care va adăuga câmpurile în funcție de tipul de beneficiar ales
-            beneficiaryTypeSelect.addEventListener('change', () => {
-                const beneficiaryType = beneficiaryTypeSelect.value;
+    beneficiaryTypeSelect.addEventListener('change', () => {
+        const beneficiaryType = beneficiaryTypeSelect.value;
+
+        dynamicFieldsContainer.innerHTML = '';
+
+        if (beneficiaryType === 'student') {
+            dynamicFieldsContainer.innerHTML = `
+                <label for="faculty" class="dynamic-label">Faculty:</label>
+                <input type="text" id="faculty" name="faculty" required placeholder="Enter your faculty" class="dynamic-input">
                 
-                // Curăță câmpurile anterioare
-                dynamicFieldsContainer.innerHTML = '';
+                <label for="series-number" class="dynamic-label">Series and Number:</label>
+                <input type="text" id="series-number" name="series-number" required placeholder="Enter your series and number" class="dynamic-input">
+            `;
+        } else if (beneficiaryType === 'pupil') {
+            dynamicFieldsContainer.innerHTML = `
+                <label for="school" class="dynamic-label">School:</label>
+                <input type="text" id="school" name="school" required placeholder="Enter your school" class="dynamic-input">
+            `;
+        }
+    });
+});
 
-                if (beneficiaryType === 'student') {
-                    // Dacă se selectează Student
-                    dynamicFieldsContainer.innerHTML = `
-                        <label for="faculty">Faculty:</label>
-                        <input type="text" id="faculty" name="faculty" required placeholder="Enter your faculty">
-                        
-                        <label for="series-number">Series and Number:</label>
-                        <input type="text" id="series-number" name="series-number" required placeholder="Enter your series and number">
-                    `;
-                } else if (beneficiaryType === 'pupil') {
-                    dynamicFieldsContainer.innerHTML = `
-                        <label for="school">School:</label>
-                        <input type="text" id="school" name="school" required placeholder="Enter your school">
-                    `;
-                }
-            });
-        });
     </script>
 
+<style>
+    .dynamic-label {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .dynamic-label label {
+        font-weight: bold;
+    }
+
+    .dynamic-label input {
+        width: 65%;
+        padding: 8px;
+    }
+</style>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
