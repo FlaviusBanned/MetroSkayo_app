@@ -21,7 +21,6 @@
     --font-xsmall: 12px;
 }
 
-/* Body Styling */
 body {
     font-family: var(--primary-font);
     font-size: var(--base-font-size);
@@ -30,38 +29,37 @@ body {
     overflow-x: hidden;
 }
 
-/* Metro Default Image Styling */
+
 .metro_default_image {
     position: relative;
-    width: var(--container-width); /* Full viewport width */
-    height: var(--image-height); /* Specific height relative to viewport height */
-    margin: 0 auto; /* Center horizontally */
-    overflow: hidden; /* Hide any overflow */
+    width: var(--container-width); 
+    height: var(--image-height); 
+    margin: 0 auto; 
+    overflow: hidden; 
 }
 
 .metro_default_image img {
-    width: 100%; /* Full width of the container */
-    height: 100%; /* Full height of the container */
-    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
     opacity: var(--bg-opacity);
-    filter: blur(var(--blur-effect)); /* Apply a blur effect */
+    filter: blur(var(--blur-effect)); 
 }
 
-/* Media Query for Tablets (screen width <= 768px) */
 @media screen and (max-width: 768px) {
     body {
         font-size: var(--font-small);
     }
 }
 
-/* Media Query for Small Devices (screen width <= 480px) */
+
 @media screen and (max-width: 480px) {
     body {
         font-size: var(--font-xsmall);
     }
 }
 
-/* Intro Text Styling */
+
 .intro-text {
     text-align: center;
     margin: 20px 0;

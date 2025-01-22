@@ -5,6 +5,7 @@
     "express": "^4.19.2",
     "firebase": "^10.12.5",
     "mongoose": "^8.5.2",
+    "nodemailer": "^6.9.16",
     "redis": "^4.7.0"
   }
 }

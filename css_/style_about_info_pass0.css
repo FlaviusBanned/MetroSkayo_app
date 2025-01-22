@@ -70,21 +70,21 @@
     color: var(--text-secondary-color);
 }
 
-/* Larger screens (min-width: 1200px) */
+
 @media (min-width: 1200px) {
     .info-container {
         max-width: 90%;
     }
 }
 
-/* Tablets (max-width: 1024px) */
+
 @media (max-width: 1024px) {
     .info-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Mobile (max-width: 768px) */
+
 @media (max-width: 768px) {
     .info-section {
         margin: 0;
@@ -100,7 +100,6 @@
     }
 }
 
-/* Extra small screens (max-width: 480px) */
 @media (max-width: 480px) {
     .info-column h2 {
         font-size: var(--font-size-title-small);

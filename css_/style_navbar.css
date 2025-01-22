@@ -1,20 +1,18 @@
-/* Define CSS Variables for easy management */
 :root {
-    --navbar-bg: rgba(0, 0, 0, 0); /* Background of the navbar */
-    --navbar-text-color: #fff; /* Text color */
-    --navbar-link-hover-bg: #fff; /* Background color for links on hover */
-    --navbar-link-hover-color: #000; /* Text color for links on hover */
-    --navbar-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for navbar */
-    --navbar-link-bg: rgba(0, 0, 0, 0.1); /* Background color for links */
-    --navbar-link-padding: 8px 16px; /* Padding for links */
-    --navbar-link-font-size: 16px; /* Font size for links */
-    --navbar-link-border-radius: 15px; /* Border radius for links */
-    --navbar-logo-font-size: 20px; /* Font size for logo */
-    --navbar-padding: 10px 20px; /* Padding for navbar */
-    --navbar-max-width: 1200px; /* Max width for the navbar container */
+    --navbar-bg: rgba(0, 0, 0, 0); 
+    --navbar-text-color: #fff; 
+    --navbar-link-hover-bg: #fff; 
+    --navbar-link-hover-color: #000; 
+    --navbar-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    --navbar-link-bg: rgba(0, 0, 0, 0.1); 
+    --navbar-link-padding: 8px 16px; 
+    --navbar-link-font-size: 16px; 
+    --navbar-link-border-radius: 15px; 
+    --navbar-logo-font-size: 20px; 
+    --navbar-padding: 10px 20px; 
+    --navbar-max-width: 1200px; 
 }
 
-/* Global reset */
 *,
 *::before,
 *::after {
@@ -31,71 +29,63 @@ body {
     overflow-x: hidden;
 }
 
-/* Navbar styling */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: var(--navbar-bg); /* Navbar background */
-    color: var(--navbar-text-color); /* Navbar text color */
+    background: var(--navbar-bg); 
+    color: var(--navbar-text-color); 
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: var(--navbar-padding); /* Navbar padding */
-    box-shadow: var(--navbar-shadow); /* Box shadow */
+    padding: var(--navbar-padding); 
+    box-shadow: var(--navbar-shadow); 
     z-index: 1000;
     border-radius: 0 0 5% 5%;
-    backdrop-filter: blur(10px); /* Backdrop blur effect */
+    backdrop-filter: blur(10px); 
 }
 
-/* Container to center the logo and nav links */
 .navbar .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: var(--navbar-max-width); /* Limit max-width */
+    max-width: var(--navbar-max-width); 
 }
 
-/* Logo styling */
 .navbar .logo {
     font-weight: bold;
-    font-size: var(--navbar-logo-font-size); /* Logo font size */
+    font-size: var(--navbar-logo-font-size); 
     text-align: center;
 }
 
-/* Navigation links styling */
 .navbar .nav-links {
     display: flex;
     align-items: center;
     position: relative;
 }
 
-/* Navigation link styling */
 .navbar a {
-    color: var(--navbar-text-color); /* Text color for links */
+    color: var(--navbar-text-color); 
     text-decoration: none;
-    font-size: var(--navbar-link-font-size); /* Font size for links */
+    font-size: var(--navbar-link-font-size); 
     margin: 0 10px;
     font-weight: bolder;
-    box-shadow: var(--navbar-shadow); /* Shadow effect for links */
-    padding: var(--navbar-link-padding); /* Padding for links */
-    border: 2px solid white; /* Transparent border */
-    border-radius: var(--navbar-link-border-radius); /* Rounded corners */
-    background-color: var(--navbar-link-bg); /* Background color for links */
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transitions */
+    box-shadow: var(--navbar-shadow); 
+    padding: var(--navbar-link-padding); 
+    border: 2px solid white; 
+    border-radius: var(--navbar-link-border-radius); 
+    background-color: var(--navbar-link-bg); 
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; 
 }
 
 .navbar a:hover {
-    background-color: var(--navbar-link-hover-bg); /* Background color on hover */
-    color: var(--navbar-link-hover-color); /* Text color on hover */
-    border-color: var(--navbar-link-hover-color); /* Border color on hover */
+    background-color: var(--navbar-link-hover-bg); 
+    color: var(--navbar-link-hover-color); 
+    border-color: var(--navbar-link-hover-color); 
 }
 
-/* Media Queries */
-
-/* Tablet (768px - 1024px) */
 @media (max-width: 768px) {
     .navbar a {
         font-size: 14px;
@@ -121,7 +111,6 @@ body {
     }
 }
 
-/* Mobile (below 768px) */
 @media (max-width: 480px) {
     .navbar a {
         font-size: 12px;
@@ -132,3 +121,16 @@ body {
         font-size: 16px;
     }
 }
+    @media (max-width: 210px) {
+        .navbar .nav-links {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            gap: 10px; 
+        }
+
+        .navbar .nav-links a {
+            width: 100%; 
+            text-align: center; 
+        }
+    }

@@ -23,7 +23,7 @@
     --image-hover-scale: 1.1;
 }
 
-/* Global Resets */
+/*resetare full */
 *,
 *::before,
 *::after {
@@ -47,7 +47,7 @@
     box-sizing: border-box;
 }
 
-/* Background Image Styling */
+
 .metro_default_image {
     position: absolute;
     top: 0;
@@ -64,7 +64,6 @@
     object-fit: cover;
 }
 
-/* Content Wrapper */
 .content-wrapper {
     display: flex;
     flex-wrap: nowrap;
@@ -77,7 +76,7 @@
     box-sizing: border-box;
 }
 
-/* Image Section */
+
 .image-container {
     display: flex;
     flex-wrap: wrap;
@@ -101,12 +100,12 @@
 }
 
 .image-item.large img {
-    max-width: 200px; /* Ajustăm pentru rezoluții mici */
+    max-width: 200px; 
     max-height: 150px;
 }
 
 .image-item.small img {
-    max-width: 60px;  /* Ajustăm pentru rezoluții mici */
+    max-width: 60px; 
     max-height: 60px;
 }
 
@@ -114,7 +113,7 @@
     transform: scale(var(--image-hover-scale));
 }
 
-/* Text Section */
+
 .GOV {
     display: flex;
     flex-direction: column;
@@ -137,7 +136,7 @@
     font-size: var(--font-medium);
 }
 
-/* Login Section */
+
 .login-section {
     display: flex;
     flex-direction: column;
@@ -178,7 +177,7 @@
     height: auto;
 }
 
-/* Form Elements */
+
 .login-form {
     display: flex;
     flex-direction: column;
@@ -208,8 +207,6 @@
     outline: none;
 }
 
-/* Responsive Adjustments */
-/* 4K Screens */
 @media (min-width: 3840px) {
     :root {
         --font-small: 18px;
@@ -218,7 +215,7 @@
     }
 }
 
-/* 2K Screens */
+
 @media (min-width: 2560px) and (max-width: 3839px) {
     :root {
         --font-small: 16px;
@@ -227,7 +224,7 @@
     }
 }
 
-/* Full HD Screens */
+
 @media (min-width: 1920px) and (max-width: 2559px) {
     :root {
         --font-small: 14px;
@@ -236,7 +233,6 @@
     }
 }
 
-/* Tablets and Smaller Screens */
 @media (max-width: 1024px) {
     .content-wrapper {
         flex-direction: column;
@@ -260,7 +256,7 @@
 @media (max-width: 750px) {
     .content-wrapper {
         padding: 10px;
-        margin-top: 25%;  /* reduce padding-ul pe dispozitivele mici */
+        margin-top: 25%;  
     }
 
     .GOV{
@@ -284,12 +280,12 @@
     }
 
     .image-item.large img {
-        max-width: 120px;  /* Dimensiuni mai mici pentru imagini mari */
+        max-width: 120px; 
         max-height: 60px;
     }
 
     .image-item.small img {
-        max-width: 25px;  /* Dimensiuni mai mici pentru imagini mici */
+        max-width: 25px;  
         max-height: 25px;
     }
 
@@ -298,10 +294,9 @@
     }
 }
 
-/* Smartphones */
 @media (max-width: 576px) {
     .content-wrapper {
-        padding: 10px; /* reduce padding-ul pe dispozitivele mici */
+        padding: 10px; 
     }
 
     .intro-text h1 {

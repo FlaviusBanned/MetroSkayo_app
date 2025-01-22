@@ -92,7 +92,7 @@ function validateField(field) {
 }
 
 // Eveniment pentru trimiterea formularului
-document.getElementById('register-form').addEventListener('submit', (event) => {
+document.getElementById('register-form').addEventListener('register_link', (event) => {
     event.preventDefault();
     register();
 });
