@@ -29,7 +29,16 @@
            -1px -1px 0 #000,
             1px -1px 0 #000,
            -1px 1px 0 #000;">Verify status </h2>
-            
+           <style>
+             .form-divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, rgba(0, 123, 255, 0) 0%, rgb(255, 255, 255) 50%, rgba(0, 123, 255, 0) 100%);
+            margin: 20px 0 30px;
+            width: 100%;
+             }
+           </style>
+            <hr class="form-divider">
                 <form id="verification-form">
                     
                     <label for="beneficiary-type">Select Beneficiary Type:</label>
@@ -39,12 +48,8 @@
                         <option value="pupil">Pupil</option>
                     </select>
             
-                  
                     <div id="dynamic-fields">
-                     
-                    </div>
-            
-                    
+                    </div>     
                     <button type="submit" class="btn-submit">Confirm</button>
                 </form>
         </section>

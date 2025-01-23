@@ -15,6 +15,15 @@
     <script defer type="module" src="/script_java_user_panel/script_java_reset_pass_logged_in.js"></script>
 </head>
 <body>
+    <style>
+          .form-divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, rgba(0, 123, 255, 0) 0%, rgb(255, 255, 255) 50%, rgba(0, 123, 255, 0) 100%);
+            margin: 20px 0 30px;
+            width: 100%;
+        }
+    </style>
     <button class="menu-toggle" id="menu-toggle">&#9776; Menu</button>
 
     <aside class="sidebar hidden" id="sidebar">
@@ -32,7 +41,8 @@
                -1px -1px 0 #000,
                 1px -1px 0 #000,
                -1px 1px 0 #000;">Purchase Metrorex Subscription</h2>
-            <br>
+        
+            <hr class="form-divider">
             <form id="purchase-form">
                 <div class="form-control">
                     <label for="subscription-type">Choose your subscription type:</label>
@@ -52,12 +62,15 @@
                         <option value="elevi">Abonament lunar pentru elevi – gratuit</option>
                     </select>
                 </div>
-                <hr class="form-divider">
+
+
                 <div class="form-control">
                     <label for="start-date">Start Date:</label>
                     <input type="text" id="start-date" name="start-date" placeholder="yyyy-mm-dd" required>
                 </div>
-                <hr class="form-divider">
+
+                
+                
                 <div class="button-container">
                     <a href="#" id="purchase"><span>Purchase</span></a>
                 </div>

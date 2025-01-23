@@ -48,7 +48,7 @@ The application includes a laptop/PC gallery showcasing a comprehensive visual r
   
 ## ⭐ PC/Laptop Gallery min res 1240px
 
-<img src="poze-git/svs1.png" alt="1." width="300" />
+<img src="poze-git/svs1.png" alt="1." width="500" />
 
 
 ## ⭐ Contributing

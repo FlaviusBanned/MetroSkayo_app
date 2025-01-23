@@ -1,52 +1,50 @@
-
 .form-control {
     position: relative; 
 }
 
-
 .form-control label {
-    display: block; /* Ensures label is on its own line */
-    margin-bottom: 5px; /* Space between label and hr */
-    font-weight: bold; /* Makes label text bold */
+    display: block; 
+    margin-bottom: 10px; 
+    font-weight: bold; 
+    margin-top: 10px;
 }
-
 
 .form-divider {
     border: none; 
-    height: 1px; 
-    background: linear-gradient(to right, rgba(0, 123, 255, 0) 0%, rgb(255, 255, 255) 50%, rgba(0, 123, 255, 0) 100%); /* Gradient effect */
-    margin: 0; /* Remove default margin */
-    margin-bottom: 30px; /* Space between the line and form control */
-    width: 100%; /* Full width of its container */
+    height: 2px; 
+    background: linear-gradient(to right, rgba(0, 123, 255, 0) 0%, rgb(255, 255, 255) 50%, rgba(0, 123, 255, 0) 100%); 
+    margin: 0; 
+    margin-bottom: 30px; 
+    width: 100%; 
 }
 
-/* Remove default border for inputs and selects */
 .form-control select {
-    border: 1px solid #ccc; /* Border around the select */
-    border-radius: 4px; /* Rounded corners */
-    padding: 10px; /* Padding inside the select */
-    background-color: #fff; /* Background color */
-    font-size: 16px; /* Font size */
-    color: #333; /* Text color */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for a subtle 3D effect */
-    width: 60%; /* Full width of its container */
-    outline: none; /* Remove default focus outline */
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    padding: 10px; 
+    background-color: #fff; 
+    font-size: 16px; 
+    color: #333; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    width: 60%; 
+    outline: none; 
+    
 }
 .form-control input {
-    border-radius: 8px; /* Rounded corners */
-    border: 1px solid #ddd; /* White border */
-    outline: none; /* Remove default outline */
+    border-radius: 8px; 
+    border: 1px solid #ddd; 
+    outline: none; 
    background: #f9f9f9;
-
+   margin-top: 5px;
+   padding: 1%; 
 }
 
 .form-control input:focus {
   border-color: #007bff;
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
-    outline: none; /* Add a subtle shadow */
+    outline: none; 
 }
 
-/* Style the select options */
 .form-control select option {
-    padding: 10px; /* Padding inside options */
+    padding: 10px; 
 }
