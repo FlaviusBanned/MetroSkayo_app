@@ -26,44 +26,40 @@ function register() {
     const password = document.getElementById('password').value;
     const retypePassword = document.getElementById('re-type_password').value;
 
-    // Constante pentru câmpurile care trebuie să fie null
     const school = "null";
     const faculty = "null";
     const serialNumber = "null";
     const studentNumber = "null";
 
-    // Verificare dacă parolele se potrivesc
     if (password !== retypePassword) {
         alert("Passwords do not match!");
         return;
     }
 
-    // Validarea câmpurilor
     if (!validateEmail(email) || !validatePassword(password) || !validateField(firstName) || !validateField(lastName) || !validateField(cnp) || !validateField(bdate)) {
         alert('One or more fields are invalid!');
         return;
     }
 
-    // Crearea utilizatorului cu email și parolă
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
 
-            // Salvarea datelor utilizatorului în Firebase
+
             set(ref(database, 'users/' + user.uid), {
                 first_name: firstName,
                 last_name: lastName,
                 cnp: cnp,
                 bdate: bdate,
                 email: email, 
-                school: school,            // Setare null
-                faculty: faculty,          // Setare null
-                serial_number: serialNumber,  // Setare null
-                student_number: studentNumber  // Setare null
+                school: school,            
+                faculty: faculty,         
+                serial_number: serialNumber, 
+                student_number: studentNumber  
             })
             .then(() => {
                 alert("User registered successfully!");
-                window.location.href = "/index.html";  // Redirecționare după succes
+                window.location.href = "/index.html"; 
             })
             .catch((error) => {
                 console.error("Error saving data:", error);
@@ -77,7 +73,7 @@ function register() {
         });
 }
 
-// Funcții de validare pentru câmpuri
+
 function validateEmail(email) {
     const expression = /^[^@]+@\w+(\.\w+)+\w$/;
     return expression.test(email);
@@ -91,7 +87,6 @@ function validateField(field) {
     return field && field.length > 0;
 }
 
-// Eveniment pentru trimiterea formularului
 document.getElementById('register-form').addEventListener('register_link', (event) => {
     event.preventDefault();
     register();

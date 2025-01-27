@@ -31,31 +31,31 @@
     --font-size-medium: 16px;
 }
 
-/* Register Section */
+
 .register-section {
     position: absolute;
-    top: 20%; /* Adjust this to push the form lower or higher */
+    top: 20%; 
     left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
+    transform: translateX(-50%); 
     z-index: 2;
-    background-color: var(--bg-color-main); /* Use variable */
-    padding: var(--container-padding); /* Use variable */
+    background-color: var(--bg-color-main); 
+    padding: var(--container-padding); 
     width: 450px;
-    max-width: 800px; /* Increased width */
+    max-width: 800px;
     margin: auto;
-    border-radius: var(--border-radius); /* Use variable */
-    box-shadow: var(--box-shadow-main); /* Use variable */
-    max-height: 900px; /* Set maximum height */
+    border-radius: var(--border-radius); 
+    box-shadow: var(--box-shadow-main); 
+    max-height: 900px; 
     flex-direction: column;
-    box-sizing: border-box; /* Ensure padding is included in the width/height calculation */
+    box-sizing: border-box; 
 }
 
-/* Login Header Styling */
+
 .register-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: var(--gap-medium); /* Use variable */
+    margin-bottom: var(--gap-medium); 
 }
 
 .register-header .text-container {
@@ -70,19 +70,19 @@
 
 .text-container figcaption {
     font-size: 16px;
-    color: var(--font-color-secondary); /* Use variable */
+    color: var(--font-color-secondary); 
 }
 
 .login-icon {
     width: 60px;
-    height: auto;/* Use variable */
+    height: auto;
 }
 
-/* Form Styling */
+
 .register-form {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-small); /* Use variable */
+    gap: var(--gap-small); 
 }
 
 .register-form label {
@@ -99,14 +99,13 @@
     border: 1px solid #ddd;
     border-radius: var(--border-radius);
     background: #f9f9f9;
-    box-sizing: border-box;/* Include padding and border in the width calculation */
+    box-sizing: border-box;
 }
 .register-form input:focus {
     border-color: #007bff;
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
     outline: none;
 }
-/* Required Span Styling */
 .required {
     color: red;
 }

@@ -1,8 +1,7 @@
-// Import Firebase modules
+
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
 import { getDatabase, ref, set } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js';
 
-// Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyB6LGyoosFP5HwgzqdoJVh797Qhwv8Fzlg",
     authDomain: "ase-storage.firebaseapp.com",
@@ -14,27 +13,23 @@ const firebaseConfig = {
     measurementId: "G-51J6SN1SWR"
 };
 
-// Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
-// Event listener for purchase
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('purchase').addEventListener('click', (event) => {
-        event.preventDefault(); // Prevent default link behavior
+        event.preventDefault(); 
 
-        // Gather form data
         let subscriptionType = document.getElementById('subscription-type').value;
         let startDate = document.getElementById('start-date').value;
         let endDate = calculateEndDate(subscriptionType, startDate);
         let price = calculatePrice(subscriptionType);
 
-        // Define userId (replace with actual user ID from authentication/session)
         const userId = 'PNdSafXjBBQ3weZQplSLZFbN3172'; 
-        const subscriptionId = Date.now(); // Unique ID for each subscription
+        const subscriptionId = Date.now(); 
         const subscriptionRef = ref(database, 'subscriptions/' + userId + '/' + subscriptionId);
 
-        // Add the subscription to Firebase
         set(subscriptionRef, {
             type: subscriptionType,
             startDate: startDate,
@@ -48,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Utility functions
+
 function calculateEndDate(type, startDate) {
     let endDate;
     if (type === 'monthly') {
@@ -56,7 +51,7 @@ function calculateEndDate(type, startDate) {
         start.setMonth(start.getMonth() + 1);
         endDate = start.toISOString().split('T')[0];
     } else {
-        endDate = startDate; // Placeholder logic
+        endDate = startDate; 
     }
     return endDate;
 }

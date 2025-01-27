@@ -1,8 +1,7 @@
-// Import Firebase modules
+
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
 import { getDatabase, ref, get } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js';
 
-// Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyB6LGyoosFP5HwgzqdoJVh797Qhwv8Fzlg",
     authDomain: "ase-storage.firebaseapp.com",
@@ -14,13 +13,13 @@ const firebaseConfig = {
     measurementId: "G-51J6SN1SWR"
 };
 
-// Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
-// Load subscriptions on page load
+
 document.addEventListener('DOMContentLoaded', () => {
-    const userId = 'PNdSafXjBBQ3weZQplSLZFbN3172'; // Replace with actual user ID
+    const userId = 'PNdSafXjBBQ3weZQplSLZFbN3172'; 
     const subscriptionsRef = ref(database, 'subscriptions/' + userId);
 
     get(subscriptionsRef).then(snapshot => {
@@ -28,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const subscriptions = snapshot.val();
             for (let key in subscriptions) {
                 const subscription = subscriptions[key];
-                updateSubscriptionsTable(subscription); // Update the table for each subscription
+                updateSubscriptionsTable(subscription); 
             }
         } else {
             console.log('No subscriptions found!');
@@ -38,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Function to update the table with subscription data
+
 function updateSubscriptionsTable(subscription) {
     let tableBody = document.getElementById('subscriptions-table').querySelector('tbody');
     let row = tableBody.insertRow();

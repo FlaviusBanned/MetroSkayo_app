@@ -61,17 +61,14 @@
     z-index: 1;
 }
 
-/* Before Pseudo-element */
 .button-container::before {
     transform: skewX(45deg) translateX(-50%);
 }
 
-/* After Pseudo-element */
 .button-container::after {
     transform: skewX(-45deg) translateX(10%);
 }
 
-/* Hover Effect for Pseudo-elements */
 .button-container:hover::before {
     transform: skewX(40deg) translateX(20%);
 }
@@ -80,13 +77,11 @@
     transform: skewX(30deg) translateX(-150%);
 }
 
-/* Ensure Text is Above Pseudo-elements */
 .button-container span {
     position: relative;
     z-index: 99;
 }
 
-/* Anchor Link Styling (to cover entire button area) */
 .button-container a {
     display: block;
     width: 100%;
@@ -102,14 +97,13 @@
     justify-content: center;
 }
 
-/* Text Span inside Anchor */
+
 .button-container a span {
     font-size: var(--button-font-size);
     color: var(--button-text-color);
     transition: opacity var(--button-transition-duration) ease, transform var(--button-transition-duration) ease, box-shadow var(--button-transition-duration) ease;
 }
 
-/* Hover Text Color Change */
 .button-container:hover a span {
     color: var(--button-hover-text-color);
 }

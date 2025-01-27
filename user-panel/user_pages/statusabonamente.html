@@ -91,10 +91,10 @@
     beneficiaryTypeSelect.addEventListener('change', () => {
         const beneficiaryType = beneficiaryTypeSelect.value;
 
-        dynamicFieldsContainer.innerHTML = '';
+        contentDynamic.innerHTML = '';
 
         if (beneficiaryType === 'student') {
-            dynamicFieldsContainer.innerHTML = `
+            contentDynamic.innerHTML = `
                 <label for="faculty" class="dynamic-label">Faculty:</label>
                 <input type="text" id="faculty" name="faculty" required placeholder="Enter your faculty" class="dynamic-input">
                 
@@ -102,7 +102,7 @@
                 <input type="text" id="series-number" name="series-number" required placeholder="Enter your series and number" class="dynamic-input">
             `;
         } else if (beneficiaryType === 'pupil') {
-            dynamicFieldsContainer.innerHTML = `
+            contentDynamic.innerHTML = `
                 <label for="school" class="dynamic-label">School:</label>
                 <input type="text" id="school" name="school" required placeholder="Enter your school" class="dynamic-input">
             `;

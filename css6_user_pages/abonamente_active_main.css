@@ -1,3 +1,9 @@
+body {
+    margin: 0;
+    padding: 20px; 
+    box-sizing: border-box; 
+}
+
 main.main-content {
     background: rgba(255, 255, 255, 0);
     backdrop-filter: blur(10px);
@@ -8,8 +14,8 @@ main.main-content {
     width: 90%;
     max-width: 800px; 
     box-sizing: border-box;
-    transition: margin-left 0.3s ease; /* Add smooth transition */
-    margin-left: 0; /* Initial state */
+    transition: margin-left 0.3s ease; 
+    margin-left: 0; 
     margin-top: 5%;
 }
 

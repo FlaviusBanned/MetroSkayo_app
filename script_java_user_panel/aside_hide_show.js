@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (isMobile) {
-            arrow.style.top = '10px';  // Stay at the top on mobile
+            arrow.style.top = '10px';  
             arrow.style.left = '50%';
             arrow.style.transform = isHidden ? 'translateX(-50%) rotate(180deg)' : 'translateX(-50%) rotate(0deg)';
         } else {

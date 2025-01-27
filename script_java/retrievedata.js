@@ -2,7 +2,6 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase
 import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
 import { getDatabase, ref, get, update } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js';
 
-// Config Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyB6LGyoosFP5HwgzqdoJVh797Qhwv8Fzlg",
     authDomain: "ase-storage.firebaseapp.com",
@@ -14,24 +13,20 @@ const firebaseConfig = {
     measurementId: "G-51J6SN1SWR"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth(app);
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Verificăm dacă utilizatorul este autentificat
     onAuthStateChanged(auth, (user) => {
         if (user) {
-            const userId = user.uid; // Obținem UID-ul utilizatorului autentificat
+            const userId = user.uid; 
             const userRef = ref(database, 'users/' + userId);
 
-            // Preluăm datele utilizatorului
             get(userRef).then(snapshot => {
                 if (snapshot.exists()) {
                     const userData = snapshot.val();
 
-                    // Precompletăm câmpurile formularului
                     document.getElementById('first-name').value = userData.first_name || '';
                     document.getElementById('last-name').value = userData.last_name || '';
                     document.getElementById('cnp').value = userData.cnp || '';
@@ -45,13 +40,13 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         } else {
             alert('You are not logged in!');
-            window.location.href = '/login.html'; // Redirect la pagina de autentificare
+            window.location.href = '/login.html';
         }
     });
 
-    // Gestionăm salvarea datelor utilizatorului
+
     document.getElementById('save-btn').addEventListener('click', () => {
-        const userId = auth.currentUser?.uid; // Obținem UID-ul utilizatorului
+        const userId = auth.currentUser?.uid; 
 
         if (!userId) {
             alert('User is not authenticated!');
@@ -69,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
             email: document.getElementById('email').value,
         };
 
-        // Actualizăm datele în baza de date
         update(userRef, updatedData)
             .then(() => {
                 alert('Profile updated successfully!');

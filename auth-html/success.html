@@ -6,7 +6,7 @@
     <link rel="icon" href="/poze-icons/metro_icon.png" type="image/x-icon"> 
     <title> | Registration Successful </title>
     <link rel="stylesheet" href="/css_3(inregistrare)/style_default.css"> 
-    <link rel="stylesheet" href="/css_5_user_panel/user_panel_background.css"><!-- Optional: Link your styles -->
+    <link rel="stylesheet" href="/css_5_user_panel/user_panel_background.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -22,7 +22,7 @@
             text-align: center;
             padding: 20px;
             border: 1px solid #ddd;
-            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5); /* White shadow */
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5); 
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-radius: 8px;
@@ -36,14 +36,14 @@
                 1px 1px 0 #000,  
                 -1px -1px 0 #000,
                 1px -1px 0 #000,
-                -1px 1px 0 #000; /* Creates a border effect around the text */
+                -1px 1px 0 #000; 
         }
         p {
             color: #ffffff;
             font-size: 1 rem;
         }
 
-        /* Button Styling */
+        
         .button-container {
             margin-top: 20px;
             font-family: 'Arial', sans-serif;
@@ -53,14 +53,14 @@
             border: none;
             cursor: pointer;
             outline: none;
-            border-radius: 10px; /* Increased border-radius */
+            border-radius: 10px; 
             position: relative;
             overflow: hidden;
             background: linear-gradient(to right, #ffffff -5%, #048d04 20%, #048d04 10%, #ffffff 50%);
             background-size: 100% 100%;
             background-position: right bottom;
             transition: background-position 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adjusted shadow for smaller button */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
             display: inline-block;
         }
         
@@ -72,7 +72,6 @@
             background-position: left top;
         }
 
-        /* Pseudo-elements for Slicing Effect */
         .button-container::before,
         .button-container::after {
             content: '';
@@ -94,7 +93,6 @@
             transform: skewX(-45deg) translateX(10%);
         }
 
-        /* Hover Effect for Pseudo-elements */
         .button-container:hover::before {
             transform: skewX(40deg) translateX(20%);
         }
@@ -103,7 +101,6 @@
             transform: skewX(30deg) translateX(-150%);
         }
 
-        /* Ensure Text is Above Pseudo-elements */
         .button-container span {
             position: relative;
             z-index: 99;
@@ -335,7 +332,7 @@
             transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
         }
         .button-container:hover a span {
-            color: aliceblue; /* Change color on hover */
+            color: aliceblue; 
         }
     }
     </style>
