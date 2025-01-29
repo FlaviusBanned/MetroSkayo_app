@@ -39,7 +39,6 @@
     display: inline-block;
 }
 
-/* Hover Effect */
 .button-container:hover {
     opacity: var(--button-hover-opacity);
     transform: var(--button-hover-transform);
@@ -47,7 +46,6 @@
     background-position: var(--button-bg-hover-position);
 }
 
-/* Pseudo-elements for Slicing Effect */
 .button-container::before,
 .button-container::after {
     content: '';

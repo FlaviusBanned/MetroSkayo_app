@@ -10,14 +10,14 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px; /* Adjust gap between icons if needed */
+    gap: 10px; 
     
 }
 
 .footer-icon img {
-    width: 40px; /* Size of icons */
-    height: 40px; /* Maintain square aspect ratio */
-    object-fit: contain; /* Ensures the icon fits within the given dimensions without distortion */
+    width: 40px; 
+    height: 40px; 
+    object-fit: contain; 
     transition: opacity 0.3s ease;
 }
 
@@ -25,7 +25,7 @@
     opacity: 0.7;
 }
 
-/* Optional: Add responsive design */
+
 @media (max-width: 600px) {
     .footer_icons {
         flex-direction: row;

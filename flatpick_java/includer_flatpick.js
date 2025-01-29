@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
    
     const today = new Date();
-    const currentDate = today.toISOString().split('T')[0]; // e.g., 
-
+    const currentDate = today.toISOString().split('T')[0]; 
    
     const futureDate = new Date(today);
     futureDate.setFullYear(today.getFullYear() + 3);

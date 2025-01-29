@@ -163,14 +163,15 @@
 
 .login-header h2 {
     margin: 0;
-    font-size: var(--font-medium);
+    font-size: 24px;
     color: var(--font-color-primary);
 }
 
 .login-header figcaption {
-    font-size: var(--font-medium);
+    font-size: 16px;
     color: var(--font-color-secondary);
 }
+
 
 .login-header .login-icon {
     width: 60px;

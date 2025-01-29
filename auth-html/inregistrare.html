@@ -21,9 +21,7 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
-    
     <script defer type="module" src="/script_java/register.js"></script>
-
 </head>
 <body>
     <header class="navbar">
@@ -37,36 +35,36 @@
         <form class="register-form" id="register-form">
             <div class="register-header">
                 <div class="text-container">
-                    <h2>REGISTER</h2>
+                    <h2>INREGISTRARE</h2>
                     <figcaption>Metrorex S.A</figcaption>
                 </div>
                 <img src="/poze-gov/metro_sign_black.png" class="login-icon" alt="Metro Sign">
             </div>
     
-            <label for="first-name">First Name:<span class="required">*</span></label>
-            <input type="text" id="first-name" name="first_name" placeholder="Popa" required>
+            <label for="first-name">Prenume:<span class="required">*</span></label>
+            <input type="text" id="first-name" name="first_name"  required>
     
-            <label for="last-name">Last Name:<span class="required">*</span></label>
-            <input type="text" id="last-name" name="last_name"  placeholder="Andreea" required>
+            <label for="last-name">Nume:<span class="required">*</span></label>
+            <input type="text" id="last-name" name="last_name"  required>
     
             <label for="cnp">CNP:<span class="required">*</span></label>
-            <input type="text" id="cnp" name="cnp" pattern="\d{13}" placeholder="6346995226362" required>
+            <input type="text" id="cnp" name="cnp" pattern="\d{13}" required>
     
-            <label for="bdate">Date of Birth:<span class="required">*</span></label>
-            <input type="date" id="bdate" name="bdate" placeholder="yyyy-mm-dd" required>
+            <label for="bdate">Data nasterii:<span class="required">*</span></label>
+            <input type="date" id="bdate" name="bdate"  required>
     
             <label for="email">Email:<span class="required">*</span></label>
-            <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._]+@(yahoo\.com|gmail\.com|outlook\.com)" placeholder="example@gmail.com" required>
+            <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._]+@(yahoo\.com|gmail\.com|outlook\.com)"  required>
     
-            <label for="password">Password:<span class="required">*</span></label>
-            <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{7,}" placeholder="Enter your password" required>
+            <label for="password">Parola:<span class="required">*</span></label>
+            <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{7,}" required>
     
-            <label for="re-type_password">Retype Password:<span class="required">*</span></label>
-            <input type="password" id="re-type_password" name="re-type_password" placeholder="Re-enter your password" required>
+            <label for="re-type_password">Reintroduceti parola:<span class="required">*</span></label>
+            <input type="password" id="re-type_password" name="re-type_password"  required>
     
             <div class="button-container">
                 <a href="#" id="register_link" class="button-link">
-                    <span>Register</span>
+                    <span>Inregistrare</span>
                 </a>
             </div>
             

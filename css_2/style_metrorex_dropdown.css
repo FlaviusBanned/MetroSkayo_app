@@ -1,4 +1,4 @@
-/* Style for dropdown sections */
+
 .dropdown-content {
     max-height: 0;
     overflow: hidden;
@@ -9,7 +9,7 @@
 }
 
 .dropdown-content.open {
-    max-height: 500px; /* Adjust based on the maximum expected content height */
+    max-height: 500px; 
     opacity: 1;
 }
 

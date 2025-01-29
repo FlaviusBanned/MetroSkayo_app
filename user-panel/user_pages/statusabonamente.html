@@ -3,32 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> | Abonamente active </title>
+    <title> | Status abonament </title>
     <link rel="icon" href="/poze-icons/metro_icon.png" type="image/x-icon"> 
     <link rel="stylesheet" href="/css_5_user_panel/style_aside_bar.css">
     <link rel="stylesheet" href="/css_5_user_panel/user_panel_background.css">
     <link rel="stylesheet" href="/css6_user_pages/abonamente_active_main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
-    <script defer type="module" src="/script_java_user_panel/script_java_reset_pass_logged_in.js"></script>
 </head>
 <body>
-    <button class="menu-toggle" id="menu-toggle">&#9776; Menu</button>
+    <button class="menu-toggle" id="menu-toggle">&#9776; Meniu</button>
     
     <aside class="sidebar hidden" id="sidebar">
-        <a href="/user-panel/user_pages/abonamenteactive.html" class="sidebar-btn">Purchase</a>
-        <a href="/user-panel/user_pages/istoricabonamente.html" class="sidebar-btn">History</a>
-        <a href="/user-panel/user_pages/setariclienti.html" class="sidebar-btn">Edit Profile</a>
-        <a href="/user-panel/user_pages/statusabonamente.html" class="sidebar-btn" >Status Subscription</a>
-        <a href="#" class="sidebar-btn close-btn" id="close-btn">Close Menu</a>
-        <a href="/index.html" class="sidebar-btn logout-btn">Log Out</a>
+        <a href="/user-panel/user_pages/abonamenteactive.html" class="sidebar-btn">Cumpara</a>
+        <a href="/user-panel/user_pages/istoricabonamente.html" class="sidebar-btn">Istoric</a>
+        <a href="/user-panel/user_pages/setariclienti.html" class="sidebar-btn">Editeaza Profilul</a>
+        <a href="/user-panel/user_pages/statusabonamente.html" class="sidebar-btn" >Status Abonament</a>
+        <a href="#" class="sidebar-btn close-btn" id="close-btn">Inchide Meniul</a>
+        <a href="/index.html" class="sidebar-btn logout-btn">Delogare</a>
     </aside>    
     <main class="main-content" id="main-content">
         <section id="purchase-section">
-            <h2 style="text-shadow: 
-            1px 1px 0 #000,  
-           -1px -1px 0 #000,
-            1px -1px 0 #000,
-           -1px 1px 0 #000;">Verify status </h2>
+            <h2 style="text-shadow: 1px 1px 0 #000,  -1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000;">Verifica Status </h2>
            <style>
              .form-divider {
             border: none;
@@ -41,12 +36,16 @@
             <hr class="form-divider">
                 <form id="verification-form">
                     
-                    <label for="beneficiary-type">Select Beneficiary Type:</label>
-                    <select id="beneficiary-type" name="beneficiary-type" required>
-                        <option value="" disabled selected>Select an option</option>
+                    <label for="beneficiary-type">Selectati Tipul de Beneficiar:</label>
+                    <select id="beneficiary-type" name="beneficiary-type" required 
+                        style=" border-radius: 10px; 
+                               border: 2px solid #ccc; font-size: 14px; background-color: #fff; 
+                              cursor: pointer;">
+                        <option value="" disabled selected>Alegeti</option>
                         <option value="student">Student</option>
-                        <option value="pupil">Pupil</option>
+                        <option value="pupil">Elev</option>
                     </select>
+                    
             
                     <div id="dynamic-fields">
                     </div>     
@@ -55,6 +54,7 @@
         </section>
         <style>
        .btn-submit {
+        margin-top: 15px;
     background-color: #5A5CFF; 
     color: #FFFFFF;
     border: 2px solid #3A3CFF; 
@@ -68,14 +68,14 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
-.btn-submit:hover {
+.btn-submit:active {
     background-color: #3A3CFF; 
     border-color: #1A1BFF; 
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
     transform: translateY(-2px); 
 }
 
-.btn-submit:active {
+.btn-submit:hover {
     background-color: #2A2BFF;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15); 
     transform: translateY(1px); 
@@ -86,7 +86,7 @@
     <script>
        document.addEventListener('DOMContentLoaded', () => {
     const beneficiaryTypeSelect = document.getElementById('beneficiary-type');
-    const dynamicFieldsContainer = document.getElementById('dynamic-fields');
+    const contentDynamic = document.getElementById('dynamic-fields');
 
     beneficiaryTypeSelect.addEventListener('change', () => {
         const beneficiaryType = beneficiaryTypeSelect.value;
@@ -95,16 +95,22 @@
 
         if (beneficiaryType === 'student') {
             contentDynamic.innerHTML = `
-                <label for="faculty" class="dynamic-label">Faculty:</label>
-                <input type="text" id="faculty" name="faculty" required placeholder="Enter your faculty" class="dynamic-input">
+                <label for="faculty" class="dynamic-label">Facultate:<span class="required">*</span> </label>
+                <input type="text" id="faculty" name="faculty" required  class="dynamic-input">
                 
-                <label for="series-number" class="dynamic-label">Series and Number:</label>
-                <input type="text" id="series-number" name="series-number" required placeholder="Enter your series and number" class="dynamic-input">
+                <label for="series-number" class="dynamic-label">Numar si Serie:<span class="required">*</span> </label>
+                <input type="text" id="series-number" name="series-number" required class="dynamic-input">
+
+                <label for="institutional-mail"class="dynamic-label">Email Institutie (secretariat):<span class="required">*</span> </label>
+                <input type="text" id="institutional-mail" name="institutional-mail" required>
             `;
         } else if (beneficiaryType === 'pupil') {
             contentDynamic.innerHTML = `
-                <label for="school" class="dynamic-label">School:</label>
-                <input type="text" id="school" name="school" required placeholder="Enter your school" class="dynamic-input">
+                <label for="school" class="dynamic-label">Scoala:<span class="required">*</span></label>
+                <input type="text" id="school" name="school" required class="dynamic-input">
+
+                <label for="institutional-mail"class="dynamic-label">Email Institutie (secretariat):<span class="required">*</span></label>
+                <input type="text" id="institutional-mail" name="institutional-mail" required>
             `;
         }
     });
@@ -113,19 +119,27 @@
     </script>
 
 <style>
-    .dynamic-label {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+    .required{
+        color: red;
     }
-
+   #dynamic-fields {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    padding: 10px;
+    border-radius:10px;
+    gap: 15px; 
+    margin-bottom: 20px; 
+}
     .dynamic-label label {
         font-weight: bold;
+        display: block; 
     }
 
-    .dynamic-label input {
+    .dynamic-input, input {
         width: 65%;
-        padding: 8px;
+        padding: 10px;
+        border-radius:10px;
     }
 </style>
 

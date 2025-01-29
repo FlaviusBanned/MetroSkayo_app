@@ -1,4 +1,4 @@
-/* Button Styling */
+
 .button-container {
     font-family: 'Arial', sans-serif;
     font-size: 13px;
@@ -25,7 +25,6 @@
     background-position: left top;
 }
 
-/* Pseudo-elements for Slicing Effect */
 .button-container::before,
 .button-container::after {
     content: '';
@@ -47,7 +46,6 @@
     transform: skewX(-45deg) translateX(10%);
 }
 
-/* Hover Effect for Pseudo-elements */
 .button-container:hover::before {
     transform: skewX(40deg) translateX(20%);
 }
@@ -56,7 +54,6 @@
     transform: skewX(30deg) translateX(-150%);
 }
 
-/* Ensure Text is Above Pseudo-elements */
 .button-container span {
     position: relative;
     z-index: 2;
